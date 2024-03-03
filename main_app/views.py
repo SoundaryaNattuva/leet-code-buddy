@@ -6,3 +6,6 @@ def home(request):
 
 def about(request):
   return render(request, 'about.html')
+
+def app_index(request):
+  return render(request, 'applications/index.html', { 'apps': apps })
