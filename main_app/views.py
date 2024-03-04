@@ -72,3 +72,11 @@ def add_doc(request, cl_id):
     except Exception as err:
       print('An error occurred uploading file to S3: %s' % err)
   return redirect('cl-detail', cl_id=cl_id)
+
+def add_interview(request, app_id):
+  form = InterviewForm(request.POST)
+  if form.is_valid():
+    new_interview = form.save(commit=False)
+    new_interview.app_id = app_id
+    new_interview.save()
+  return redirect('app-detail', app_id=app_id)

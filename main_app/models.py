@@ -90,6 +90,15 @@ TYPES = (
   ('I','Indeed'),
 )
 
+INTERVIEWTYPES = (
+  ('P', 'Phone Screen')
+  ('T', 'Technical')
+  ('C', 'Cultural-Fit')
+  ('O', 'On-Site')
+  ('S', 'System-Design')
+  ('C', 'Code-Review')
+)
+
 # Create your models here.
 class Application(models.Model):
   date = models.DateField('Application Submission Date', null=False, blank=True)
@@ -130,3 +139,15 @@ class Document(models.Model):
 
   def __str__(self):
     return f"Document for cl_id: {self.cl_id} @{self.url}"
+  
+class Interview(models.Model):
+  date = models.DateField('Feeding Date') ##('x') is the field name
+  interviewType = models.CharField('Interview Type',
+    max_length=1,
+    choices=INTERVIEWTYPES,
+    default=INTERVIEWTYPES[0][0]
+  )
+  app = models.ForeignKey(Application, on_delete=models.CASCADE)
+  
+  def __str__(self):
+    return f"{self.get_meal_display()} on {self.date}"

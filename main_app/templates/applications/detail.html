@@ -9,4 +9,21 @@
   <a href="{% url 'app-update' app.id %}" class="btn warn">Edit</a>
   <a href="{% url 'app-delete' app.id %}" class="btn danger">Delete</a>
 </div>
+
+
+<form
+action="{% url 'add-interview' app.id %}"
+method="post" 
+class="subsection-content"
+autocomplete="off"
+>
+{% csrf_token %}
+{% if app.fed_for_today %}
+  <p class="fed">{{cat.name}} has been fed all their meals for today!</p>
+{% else %}
+  <p class="unfed">{{cat.name}} might be hungry!</p>
+{% endif %}
+{{ feeding_form.as_p }}
+<button type="submit" class="btn submit">Add Feeding</button>
+</form>
 {% endblock %}
