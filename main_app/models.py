@@ -141,12 +141,17 @@ class Document(models.Model):
   
 class Interview(models.Model):
   date = models.DateField('Interview Date')
+  time = models.TimeField()
   interviewType = models.CharField('Interview Type',
     max_length=1,
     choices=INTERVIEWTYPES,
     default=INTERVIEWTYPES[0][0]
   )
+  notes = models.TextField(max_length=100)
   app = models.ForeignKey(Application, on_delete=models.CASCADE)
   
   def __str__(self):
     return f"{self.get_interview_display()} on {self.date}"
+  
+  class Meta: 
+    ordering = ['-date']

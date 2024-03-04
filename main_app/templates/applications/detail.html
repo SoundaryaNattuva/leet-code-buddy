@@ -22,20 +22,21 @@
     {{ interview_form.as_p }}
     <button type="submit" class="btn submit">Add Interview</button>
   </form>
-  {% endblock %}
 
   <table>
     <thead>
       <tr>
         <th>Date</th>
-        <th>Meal</th>
+        <th>Interview Type</th>
       </tr>
     </thead>
     <tbody>
         <tr>
           <td>{{interview.date}}</td>
-          <td>{{interview.get_interview_display}}</td>
+          <td>{{interview.interviewType}}</td>
         </tr>
     </tbody>
   </table>
 </div>
+  {% endblock %}
+
