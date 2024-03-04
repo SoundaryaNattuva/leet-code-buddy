@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="card-container">
+  <h1>List of all Applications</h1>
+  {% for app in apps %}
+    <div class="each_app">
+      <a href="{% url 'app-detail' app.id%}">
+        <p> This is job application is for the role of {{app.position}} at the company {{app.company}}</p>
+      </a>
+    </div>
+  {% endfor %}
+</section>
+
+{% endblock %}

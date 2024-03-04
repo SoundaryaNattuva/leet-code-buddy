@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block content %}
+<h1>This is the details page for {{ app.position }} at {{app.company}}</h1>
+<div class="app-actions">
+  <a href="{% url 'app-update' app.id %}" class="btn warn">Edit</a>
+  <a href="{% url 'app-delete' app.id %}" class="btn danger">Delete</a>
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+{% endblock %}
+
+{% block content %}
+  <div class="page-header">
+    {% if object %}
+      <h1>Edit {{ object.position }} at {{ object.company }}</h1>
+    {% else %}
+      <h1>Log new application</h1>
+    {% endif %}
+  </div>
+  <form action="" method="post" class="form-container">
+    {% csrf_token %}
+    <table>
+      {{ form.as_table }}
+    </table>
+    <button type="submit" class="btn submit">Create!</button>
+  </form>
+
+  {% endblock %}
