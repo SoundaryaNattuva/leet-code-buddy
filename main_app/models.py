@@ -91,12 +91,12 @@ TYPES = (
 )
 
 INTERVIEWTYPES = (
-  ('P', 'Phone Screen')
-  ('T', 'Technical')
-  ('C', 'Cultural-Fit')
-  ('O', 'On-Site')
-  ('S', 'System-Design')
-  ('C', 'Code-Review')
+  ('P', 'Phone Screen'),
+  ('T', 'Technical'),
+  ('C', 'Cultural-Fit'),
+  ('O', 'On-Site'),
+  ('S', 'System-Design'),
+  ('C', 'Code-Review'),
 )
 
 # Create your models here.
@@ -135,13 +135,12 @@ class CoverLetter(models.Model):
   
 class Document(models.Model):
   url = models.CharField(max_length=250)
-  cl = models.OneToOneField(CoverLetter, on_delete=models.CASCADE)
 
   def __str__(self):
     return f"Document for cl_id: {self.cl_id} @{self.url}"
   
 class Interview(models.Model):
-  date = models.DateField('Feeding Date') ##('x') is the field name
+  date = models.DateField('Interview Date')
   interviewType = models.CharField('Interview Type',
     max_length=1,
     choices=INTERVIEWTYPES,
@@ -150,4 +149,4 @@ class Interview(models.Model):
   app = models.ForeignKey(Application, on_delete=models.CASCADE)
   
   def __str__(self):
-    return f"{self.get_meal_display()} on {self.date}"
+    return f"{self.get_interview_display()} on {self.date}"

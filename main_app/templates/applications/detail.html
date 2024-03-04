@@ -10,20 +10,32 @@
   <a href="{% url 'app-delete' app.id %}" class="btn danger">Delete</a>
 </div>
 
+<div class="interviewsContainer">
+  <h1> Interviews </h1>
+  <form
+  action="{% url 'add-interview' app.id %}"
+  method="post" 
+  class="subsection-content"
+  autocomplete="off"
+  >
+    {% csrf_token %}
+    {{ interview_form.as_p }}
+    <button type="submit" class="btn submit">Add Interview</button>
+  </form>
+  {% endblock %}
 
-<form
-action="{% url 'add-interview' app.id %}"
-method="post" 
-class="subsection-content"
-autocomplete="off"
->
-{% csrf_token %}
-{% if app.fed_for_today %}
-  <p class="fed">{{cat.name}} has been fed all their meals for today!</p>
-{% else %}
-  <p class="unfed">{{cat.name}} might be hungry!</p>
-{% endif %}
-{{ feeding_form.as_p }}
-<button type="submit" class="btn submit">Add Feeding</button>
-</form>
-{% endblock %}
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Meal</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>{{interview.date}}</td>
+          <td>{{interview.get_interview_display}}</td>
+        </tr>
+    </tbody>
+  </table>
+</div>

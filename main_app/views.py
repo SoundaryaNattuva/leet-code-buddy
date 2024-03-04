@@ -43,7 +43,11 @@ def cl_index(request):
 
 def cl_detail(request, cl_id):
   cl = CoverLetter.objects.get(id=cl_id)
-  return render(request, 'coverletters/cl-detail.html', {'cl' : cl} )
+  interview_form = InterviewForm()
+  return render(request, 'coverletters/cl-detail.html', {
+    'cl' : cl, 
+    'interview_form': interview_form
+    })
 
 class ClCreate(CreateView):
   model = CoverLetter
