@@ -147,7 +147,7 @@ class Interview(models.Model):
     choices=INTERVIEWTYPES,
     default=INTERVIEWTYPES[0][0]
   )
-  notes = models.TextField(max_length=100)
+  notes = models.TextField(max_length=100, default="")
   app = models.ForeignKey(Application, on_delete=models.CASCADE)
   
   def __str__(self):
