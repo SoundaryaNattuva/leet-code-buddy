@@ -5,7 +5,7 @@ table {
 }
 td, th {
   border: 1px solid #dddddd;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(252, 241, 241);
   text-align: left;
   padding: 8px;
 }
@@ -13,8 +13,20 @@ td, th {
 .headers{
   color: black;
   font-size: 20px;
+  text-align: center;
 }
 
 .rows{
   color: black
+}
+
+table a:link {
+  color: rgb(1, 0, 0); /* Set the color for unvisited links */
+  text-decoration: none; /* Remove underline */
+}
+
+/* Style visited links */
+table a:visited {
+  color: rgb(0, 0, 0); /* Set the same color as unvisited links */
+  text-decoration: none; /* Remove underline */
 }

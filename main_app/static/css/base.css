@@ -5,12 +5,12 @@ body {
 
 /* Style unvisited links */
 a:link {
-  color: blue; /* Set the color for unvisited links */
+  color: rgb(255, 255, 255); /* Set the color for unvisited links */
   text-decoration: none; /* Remove underline */
 }
 
 /* Style visited links */
 a:visited {
-  color: blue; /* Set the same color as unvisited links */
+  color: rgb(255, 255, 255); /* Set the same color as unvisited links */
   text-decoration: none; /* Remove underline */
 }
