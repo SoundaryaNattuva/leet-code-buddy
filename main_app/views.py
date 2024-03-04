@@ -22,7 +22,11 @@ def app_index(request):
 
 def app_detail(request, app_id):
   app = Application.objects.get(id=app_id)
-  return render(request, 'applications/detail.html', {'app' : app} )
+  interview_form = InterviewForm()
+  return render(request, 'applications/detail.html', {
+    'app' : app,
+    'interview_form': interview_form
+    })
 
 class AppCreate(CreateView):
   model = Application
@@ -43,10 +47,8 @@ def cl_index(request):
 
 def cl_detail(request, cl_id):
   cl = CoverLetter.objects.get(id=cl_id)
-  interview_form = InterviewForm()
   return render(request, 'coverletters/cl-detail.html', {
     'cl' : cl, 
-    'interview_form': interview_form
     })
 
 class ClCreate(CreateView):
