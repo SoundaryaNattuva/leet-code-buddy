@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Application
+from .models import Application, CoverLetter
 
 # Create your views here.
 def home(request):
@@ -29,3 +29,24 @@ class AppUpdate(UpdateView):
 class AppDelete(DeleteView):
   model = Application
   success_url = '/applications/'
+
+def cl_index(request):
+  cls = CoverLetter.objects.all()
+  return render(request, 'coverletters/cl-index.html', { 'cls': cls })
+
+def cl_detail(request, cl_id):
+  cl = CoverLetter.objects.get(id=cl_id)
+  return render(request, 'coverletters/cl-detail.html', {'cl' : cl} )
+
+class ClCreate(CreateView):
+  model = CoverLetter
+  fields = ['date', 'position', 'letter', 'tags']
+  success_url = '/coverletters'
+
+class ClUpdate(UpdateView):
+  model = CoverLetter
+  fields = ['date', 'position', 'letter', 'tags']
+
+class ClDelete(DeleteView):
+  model = CoverLetter
+  success_url = '/coverletters'

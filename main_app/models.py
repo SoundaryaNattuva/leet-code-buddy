@@ -98,3 +98,15 @@ class Application(models.Model):
   
   def get_absolute_url(self):
     return reverse('app-detail', kwargs={'app_id': self.id})
+  
+class CoverLetter(models.Model):
+  date = models.DateField('Date', null=False, blank=True)
+  position = models.CharField('Title', max_length=50, null=False, blank=True)
+  letter = models.TextField('Cover Letter', max_length=2500, null=False, blank=True)
+  tags = models.CharField('Tags', max_length=250)
+
+  def __str__(self):
+    return self.position
+  
+  def get_absolute_url(self):
+    return reverse('cl-detail', kwargs={'cl_id': self.id})

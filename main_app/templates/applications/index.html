@@ -1,36 +1,44 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<link 
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/app-index.css' %}"
+/>
+{% endblock %}
 {% block content %}
 
 <section class="card-container">
   <h1>List of all Applications</h1>
-    <div class="dashboard-table">
-      <table>
-        <tr>
-          <th>Position</th>
-          <th>Company</th>
-          <th>Enthusiasm</th>
-          <th>Work Arrangement</th>
-          <th>Location </th>
-          <th>Tech Stack</th>
-          <th>Status</th>
-          <th>Min Salary</th>
-          <th>Max Salary</th>
-        </tr>
-        {% for app in apps %}
-        <tr>
-          <th>{{ app.position }}</th>
-          <th>{{ app.company }}</th>
-          <th>{{ app.get_enthusiasm_display }}</th>
-          <th>{{ app.get_workArrangement_display }}</th>
-          <th>{{ app.city }}, {{ app.state }}</th>
-          <th>{{ app.techstack }}</th>
-          <th>{{ app.get_status_display }}</th>
-          <th>{{ app.minsalary  }}</th>
-          <th>{{ app.maxsalary }}</th>
-        </tr>
-        {% endfor %}
-      <table>
-    </div>
+  <div class="dashboard-table">
+    <table class="table table-bordered table-hover dt-responsive">
+      <tr class="headers">
+        <th>Position</th>
+        <th>Company</th>
+        <th>Enthusiasm</th>
+        <th>Work Arrangement</th>
+        <th>Location </th>
+        <th>Tech Stack</th>
+        <th>Status</th>
+        <th>Min Salary</th>
+        <th>Max Salary</th>
+      </tr>
+      {% for app in apps %}
+      <tr class="rows">
+        <th><a href="{% url 'app-detail' app.id %}">{{ app.position }}</a></th>
+        <th>{{ app.company }}</th>
+        <th>{{ app.get_enthusiasm_display }}</th>
+        <th>{{ app.get_workArrangement_display }}</th>
+        <th>{{ app.city }}, {{ app.state }}</th>
+        <th>{{ app.techstack }}</th>
+        <th>{{ app.get_status_display }}</th>
+        <th>{{ app.minsalary  }}</th>
+        <th>{{ app.maxsalary }}</th>
+      </tr>
+      {% endfor %}
+    <table>
+  </div>
 </section>
 
 {% endblock %}
