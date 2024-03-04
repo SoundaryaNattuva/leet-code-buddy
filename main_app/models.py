@@ -78,6 +78,18 @@ STATES = (
   ('WY', 'Wyoming')
 )
 
+TYPES = (
+  ('R','Referal'),
+  ('C','Company Portal'),
+  ('L','LinkedIn'),
+  ('M','Monster'),
+  ('G','Glassdoor'),
+  ('L','LinkUp'),
+  ('S','SimplyHired'),
+  ('Z','ZipRecruiter'),
+  ('I','Indeed'),
+)
+
 # Create your models here.
 class Application(models.Model):
   date = models.DateField('Application Submission Date', null=False, blank=True)
@@ -92,6 +104,7 @@ class Application(models.Model):
   minsalary = models.DecimalField('Minimum Salary',max_digits=10, decimal_places=2, null=True, blank=True)
   maxsalary = models.DecimalField('Maximum Salary', max_digits=10, decimal_places=2, null=True, blank=True)
   notes = models.TextField(max_length=1000)
+  applicationType = models.CharField(max_length=1, choices=TYPES, default=TYPES[0][0])
 
   def __str__(self):
     return self.position
@@ -110,3 +123,10 @@ class CoverLetter(models.Model):
   
   def get_absolute_url(self):
     return reverse('cl-detail', kwargs={'cl_id': self.id})
+  
+class Document(models.Model):
+  url = models.CharField(max_length=250)
+  cl = models.OneToOneField(CoverLetter, on_delete=models.CASCADE)
+
+  def __str__(self):
+    return f"Document for cl_id: {self.cl_id} @{self.url}"

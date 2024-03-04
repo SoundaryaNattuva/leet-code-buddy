@@ -9,4 +9,31 @@
   <a href="{% url 'cl-update' cl.id %}" class="btn warn">Edit</a>
   <a href="{% url 'cl-delete' cl.id %}" class="btn danger">Delete</a>
 </div>
+<h1>Please upload resume to match cover letter</h1>
+<p id="file-name"></p>
+    <form 
+      action="{% url 'add-doc' cl.id %}"
+      enctype="multipart/form-data"
+      method="POST"
+    >
+      {% csrf_token %}
+      <label class="btn secondary">
+        Choose Resume
+        <input type="file" name="doc-file" id="file-input">
+      </label>
+      <button type="submit" class="btn submit">Upload Document</button>
+    </form>
+<h2> Uploaded Documents: </h2>
+<section class="doc-container">
+  <div class="doc-img">
+    {% if doc.document.url %}
+      <a 
+        src="{{doc.document.url}}" 
+        alt="A document of {{doc.id}}"
+      > </a>
+    {% else %}
+      <p>No document uploaded</p>
+    {% endif %}
+  </div>
+    
 {% endblock %}

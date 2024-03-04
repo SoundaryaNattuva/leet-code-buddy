@@ -15,4 +15,5 @@ urlpatterns = [
   path('coverletters/create/', views.ClCreate.as_view(), name='cl-create'),
   path('coverletters/<int:pk>/update/', views.ClUpdate.as_view(), name='cl-update'),
   path('coverletters/<int:pk>/delete/', views.ClDelete.as_view(), name='cl-delete'),
+  path('coverletters/<int:cl_id>/add-doc/', views.add_doc, name='add-doc'),
 ]

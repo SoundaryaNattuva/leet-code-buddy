@@ -1,6 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Application, CoverLetter
+from .models import Application, CoverLetter, Document
+import uuid
+import boto3
+
+S3_BASE_URL = 'https://s3.us-east-1.amazonaws.com/'
+BUCKET = 'aryanatts-app-collector'
 
 # Create your views here.
 def home(request):
@@ -50,3 +55,20 @@ class ClUpdate(UpdateView):
 class ClDelete(DeleteView):
   model = CoverLetter
   success_url = '/coverletters'
+
+def add_doc(request, cl_id):
+  doc_file = request.FILES.get('doc-file', None)
+  if doc_file:
+    s3 = boto3.client('s3')
+    key = uuid.uuid4().hex + doc_file.name[doc_file.name.rfind('.'):]
+    try:
+      s3.upload_fileobj(doc_file, BUCKET, key)
+      url = f"{S3_BASE_URL}{BUCKET}/{key}"
+      document = Document(url=url, id=id)
+      cl_document = Document.objects.filter(id=id)
+      if cl_document.first():
+        cl_document.first().delete()
+      document.save()
+    except Exception as err:
+      print('An error occurred uploading file to S3: %s' % err)
+  return redirect('cl-detail', cl_id=cl_id)
