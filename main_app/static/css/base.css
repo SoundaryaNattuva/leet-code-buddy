@@ -41,3 +41,9 @@ body {
 .navbar a:hover {
   background-color: aqua;
 }
+
+.body-container {
+  margin-left: 200px;
+  font-size: 18px;
+  background-color: rgb(34, 18, 74);
+}
