@@ -1,17 +1,58 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block head %}
+<link 
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/app-detail.css' %}"
+/>
 {% endblock %}
 
 {% block content %}
-<h1>This is the details page for {{ app.position }} at {{app.company}}</h1>
-<div class="app-actions">
-  <a href="{% url 'app-update' app.id %}" class="btn warn">Edit</a>
-  <a href="{% url 'app-delete' app.id %}" class="btn danger">Delete</a>
+<div class="app-container">
+  <div class="app-header">
+    {{ app.position }} </br>
+    {{ app.company }}
+    <div class="app-actions">
+      <a href="{% url 'app-update' app.id %}" class="btn warn">Edit</a>
+      <a href="{% url 'app-delete' app.id %}" class="btn danger">Delete</a>
+    </div>
+  </div>
+  <div class="app-info">
+    <table style="width:100%" class="content-table">
+      <tr>
+        <th>Date Submitted:</th>
+        <td>{{ app.date }}</td>
+      </tr>
+      <tr>
+        <th>Submission:</th>
+        <td>{{ app.get_applicationType_display }}</td>
+      </tr>
+      <tr>
+        <th>Location:</th>
+        <td>{{ app.city }}, {{ app.state }}</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>{{ app.get_status_display }}</td>
+      </tr>
+      <tr>
+        <th>Salary Range:</th>
+        <td>{{ app.minsalary }} - {{ app.maxsalary }}</td>
+      </tr>
+      <tr>
+        <th>Tech Stack:</th>
+        <td>{{ app.techstack }}</td>
+      </tr>
+    </table>
+  </div>
+  <div class="app-notes">
+    <h2>Notes</h2>
+    {{ app.notes }}
+  </div>
 </div>
-
 <div class="interviewsContainer">
-  <h1> Interviews </h1>
+  <h2> Interviews </h2>
   <form
   action="{% url 'add-interview' app.id %}"
   method="post" 

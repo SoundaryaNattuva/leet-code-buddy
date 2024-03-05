@@ -1,0 +1,69 @@
+.app-container{
+  align-items: center;
+}
+
+.app-header{
+  color:#282c2b;
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 20px;
+  /* border: 1px solid rgb(225, 55, 83); */
+}
+
+.app-info{
+  display: flex;
+  justify-content: center; /* Horizontally center the flex items */
+  align-items: center;
+}
+
+.app-actions{
+  font-size: 16px;
+}
+
+.content-table {
+  font-family: raleway;
+  margin: 25px 0;
+  font-size: .9em;
+  border-collapse: collapse;
+  min-width: 400px;
+  max-width: 600px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba( 0, 0 ,0, 0.15)
+}
+
+.content-table tr th {
+  background-color: #009879;
+  color: white;
+  text-align: left;
+  font-weight: bold;
+}
+
+.content-table th,
+.content-table td{
+  padding: 12px 15px;
+}
+
+.content-table th{
+  width: 100px;
+}
+
+
+.content-table tbody td{
+  border-bottom: 1px solid gray;
+  color: black
+}
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.content-table .rows td {
+  border: 1px solid gray;
+}
+
+.app-notes{
+  background-color: rgb(222, 222, 222);
+  min-width: 400px;
+  max-width: 600px;
+}
