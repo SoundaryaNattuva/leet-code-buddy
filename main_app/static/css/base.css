@@ -1,16 +1,43 @@
 body {
-  color: #FEFCFB;
   background-color: #001F54;
+  color: white;
+  margin: 0; /* Remove default margin */
 }
 
-/* Style unvisited links */
-a:link {
-  color: rgb(255, 255, 255); /* Set the color for unvisited links */
-  text-decoration: none; /* Remove underline */
+.header {
+  color: white;
+  text-decoration: none;
+  padding: 0px;
+  display: block;
+  text-align: center;
+  background-color: rgb(44, 106, 142);
 }
 
-/* Style visited links */
-a:visited {
-  color: rgb(255, 255, 255); /* Set the same color as unvisited links */
-  text-decoration: none; /* Remove underline */
+.navbar {
+  position: fixed; /* Fixed positioning */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  height: 100%; /* Extend to the full height of the viewport */
+  background-color: rgb(44, 106, 142); /* Change the background color as needed */
+}
+
+.navbar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar li {
+  margin-bottom: 10px; /* Add some space between list items */
+}
+
+.navbar a {
+  display: block;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background-color: aqua;
 }

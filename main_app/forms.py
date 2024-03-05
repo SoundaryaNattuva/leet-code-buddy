@@ -4,4 +4,4 @@ from .models import Interview
 class InterviewForm(ModelForm):
   class Meta:
     model = Interview
-    fields = ['date', 'interviewType', ]
+    fields = ['date', 'time', 'interviewType' ]

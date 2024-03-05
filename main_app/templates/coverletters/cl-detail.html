@@ -23,17 +23,18 @@
       </label>
       <button type="submit" class="btn submit">Upload Document</button>
     </form>
-<h2> Uploaded Documents: </h2>
-<section class="doc-container">
+<h2> Uploaded Document: {{ doc.id }} </h2>
+{% comment %} <section class="doc-container">
   <div class="doc-img">
-    {% if doc.document.url %}
+    {% if doc.url %}
       <a 
-        src="{{doc.document.url}}" 
+        src="{{doc.url}}" 
         alt="A document of {{doc.id}}"
-      > </a>
+      > {{ doc.id }} </a>
     {% else %}
       <p>No document uploaded</p>
     {% endif %}
   </div>
+</section> {% endcomment %}
     
 {% endblock %}
