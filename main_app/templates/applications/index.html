@@ -12,7 +12,7 @@
 <section class="card-container">
   <h1>List of all Applications</h1>
   <div class="dashboard-table">
-    <table class="table table-bordered table-hover dt-responsive">
+    <table class="content-table">
       <tr class="headers">
         <th>Position</th>
         <th>Company</th>
@@ -26,15 +26,15 @@
       </tr>
       {% for app in apps %}
       <tr class="rows">
-        <th><a href="{% url 'app-detail' app.id %}">{{ app.position }}</a></th>
-        <th>{{ app.company }}</th>
-        <th>{{ app.get_enthusiasm_display }}</th>
-        <th>{{ app.get_workArrangement_display }}</th>
-        <th>{{ app.city }}, {{ app.state }}</th>
-        <th>{{ app.techstack }}</th>
-        <th>{{ app.get_status_display }}</th>
-        <th>{{ app.minsalary  }}</th>
-        <th>{{ app.maxsalary }}</th>
+        <td><a href="{% url 'app-detail' app.id %}">{{ app.position }}</a></td>
+        <td>{{ app.company }}</td>
+        <td>{{ app.get_enthusiasm_display }}</td>
+        <td>{{ app.get_workArrangement_display }}</td>
+        <td>{{ app.city }}, {{ app.state }}</td>
+        <td>{{ app.techstack }}</td>
+        <td>{{ app.get_status_display }}</td>
+        <td>{{ app.minsalary  }}</td>
+        <td>{{ app.maxsalary }}</td>
       </tr>
       {% endfor %}
     <table>
