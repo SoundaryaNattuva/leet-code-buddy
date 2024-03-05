@@ -67,3 +67,76 @@
   min-width: 400px;
   max-width: 600px;
 }
+
+.interview-form{
+
+}
+
+.button-37 {
+  background-color: #009879;
+  border: 1px solid #009879;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+  outline: 0;
+  margin-top: 20px;
+  padding: 10px 25px;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 150ms, box-shadow 150ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-37:hover {
+  box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
+  transform: translateY(-2px);
+}
+
+@media (min-width: 768px) {
+  .button-37 {
+    padding: 10px 30px;
+  }
+}
+
+button-37[type=submit]:hover {
+  background-color: #45a049;
+}
+
+form button{
+  align-items: center;
+}
+
+.interview-table table {
+  width: calc(100% - 16px);
+  text-align: left;
+  border-collapse: collapse;
+  margin: 0 8px;
+}
+
+.interview-table td {
+  padding: 8px 5px;
+  font-size: var(--font-reg);
+}
+
+.interview-table th {
+  font-size: var(--font-l);
+  padding: 5px 5px 0;
+  border-bottom: rgb(36, 116, 248) solid 2px;
+}
+
+.interview-table tr:nth-child(even) {
+  background-color: #f3f3fd;
+}
+
+.interview-table th{
+  width: 100px;
+  font-size: 16px;
+}

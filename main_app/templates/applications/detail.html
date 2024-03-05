@@ -56,29 +56,30 @@
   <form
   action="{% url 'add-interview' app.id %}"
   method="post" 
-  class="subsection-content"
+  class="interview-form"
   autocomplete="off"
   >
-  <p>FORM</p>
-    {% csrf_token %}
-    {{ interview_form.as_p }}
-    <button type="submit" class="btn submit">Add Interview</button>
-  </form>
 
-  <table>
+  <table class="interview-table">
     <thead>
-      <tr>
-        <th>Date</th>
-        <th>Interview Type</th>
-      </tr>
+      <tr><th>Date</th><th>Time</th><th>Type</th></tr>
     </thead>
     <tbody>
+      {% for interview in interviews %}
         <tr>
           <td>{{interview.date}}</td>
           <td>{{interview.interviewType}}</td>
         </tr>
+      {% endfor %}
     </tbody>
   </table>
+
+  <h4>Add new interview</h4>
+    {% csrf_token %}
+    {{ interview_form.as_p }}
+    <button type="submit" class="button-37">Add Interview</button>
+  </form>
+
 </div>
   {% endblock %}
 
