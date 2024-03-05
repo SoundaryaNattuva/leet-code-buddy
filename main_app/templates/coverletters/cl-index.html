@@ -15,7 +15,7 @@
     <a href="{% url 'cl-create' %}"> Create New </a>
   </div>
   <div class="dashboard-table">
-    <table class="table table-bordered table-hover dt-responsive">
+    <table class="content-table">
       <tr class="headers">
         <th>Position</th>
         <th>Date</th>
@@ -24,10 +24,10 @@
       </tr>
       {% for cl in cls %}
       <tr class="rows">
-        <th><a href="{% url 'cl-detail' cl.id %}">{{ cl.position }}</a></th>
-        <th>{{ cl.date }}</th>
-        <th>{{ cl.position }}</th>
-        <th>{{ cl.tags }}</th>
+        <td><a href="{% url 'cl-detail' cl.id %}">{{ cl.position }}</a></td>
+        <td>{{ cl.date }}</td>
+        <td>{{ cl.position }}</td>
+        <td>{{ cl.tags }}</td>
       </tr>
       {% endfor %}
     <table>

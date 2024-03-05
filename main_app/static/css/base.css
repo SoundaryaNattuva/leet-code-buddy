@@ -1,17 +1,15 @@
 body {
-  background-color: #001F54;
-  color: white;
+  background-color: #f2f4f8;
+  color: rgb(0, 0, 0);
   margin: 0; /* Remove default margin */
-  font-family: quicksand;
+  font-family: raleway;
 }
 
 .header {
-  color: white;
   text-decoration: none;
   padding: 0px;
   display: block;
   text-align: center;
-  background-color: rgb(44, 106, 142);
 }
 
 .navbar {
@@ -19,7 +17,7 @@ body {
   top: 0; /* Align to the top */
   left: 0; /* Align to the left */
   height: 100%; /* Extend to the full height of the viewport */
-  background-color: rgb(44, 106, 142); /* Change the background color as needed */
+  background-color: rgb(44, 142, 121); /* Change the background color as needed */
 }
 
 .navbar ul {
@@ -40,7 +38,7 @@ body {
 }
 
 .navbar a:hover {
-  background-color: aqua;
+  background-color: rgb(48, 189, 112);
 }
 
 .body-container {

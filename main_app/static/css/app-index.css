@@ -1,5 +1,5 @@
 .content-table {
-  font-family: 'quicksand', sans-serif;
+  font-family: raleway;
   margin: 25px 0;
   font-size: .9em;
   border-collapse: collapse;
@@ -21,27 +21,29 @@
   padding: 12px 15px;
 }
 
+
 .content-table tbody tr{
   border-bottom: 1px solid gray;
+  color: black
 }
-
 .content-table tbody tr:last-of-type {
   border-bottom: 2px solid #009879;
 }
 
-/* .content-table tbody tr.active-row{
-  font-weight: bold;
-  color: 0098789;
-
-} */
-
-table a:link {
-  color: rgb(1, 0, 0); /* Set the color for unvisited links */
-  text-decoration: none; /* Remove underline */
+.content-table tr:hover{
+  background-color: #c8efe7;
 }
 
-/* Style visited links */
+.content-table .rows td {
+  border: 1px solid gray;
+}
+
+table a:link {
+  color: rgb(1, 0, 0);
+  text-decoration: none;
+}
+
 table a:visited {
-  color: rgb(255, 255, 255); /* Set the same color as unvisited links */
-  text-decoration: none; /* Remove underline */
+  color: rgb(0, 0, 0);
+  text-decoration: none;
 }
