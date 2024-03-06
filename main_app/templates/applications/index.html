@@ -24,19 +24,33 @@
         <th>Min Salary</th>
         <th>Max Salary</th>
       </tr>
-      {% for app in apps %}
-      <tr class="rows">
-        <td><a href="{% url 'app-detail' app.id %}">{{ app.position }}</a></td>
-        <td>{{ app.company }}</td>
-        <td>{{ app.get_enthusiasm_display }}</td>
-        <td>{{ app.get_work_arrangement_display }}</td>
-        <td>{{ app.city }}, {{ app.state }}</td>
-        <td>{{ app.techstack }}</td>
-        <td>{{ app.get_status_display }}</td>
-        <td>{{ app.minsalary  }}</td>
-        <td>{{ app.maxsalary }}</td>
-      </tr>
-      {% endfor %}
+      {% if app in apps %}
+        {% for app in apps %}
+        <tr class="rows">
+          <td><a href="{% url 'app-detail' app.id %}">{{ app.position }}</a></td>
+          <td>{{ app.company }}</td>
+          <td>{{ app.get_enthusiasm_display }}</td>
+          <td>{{ app.get_work_arrangement_display }}</td>
+          <td>{{ app.city }}, {{ app.state }}</td>
+          <td>{{ app.techstack }}</td>
+          <td>{{ app.get_status_display }}</td>
+          <td>{{ app.minsalary  }}</td>
+          <td>{{ app.maxsalary }}</td>
+        </tr>
+        {% endfor %}
+        {% else %}
+        <tr class="rows">
+          <td>No Applications</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      {% endif %}
     <table>
   </div>
 </section>
