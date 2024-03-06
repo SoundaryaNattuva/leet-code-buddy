@@ -1,7 +1,7 @@
-const dateInput = document.getElementById('id_app_date')
+const dateInput = document.getElementById('id_date')
 
 const picker = MCDatepicker.create({
-  el: '#id_app_date', '#id_date',
+  el: '#id_date',
   dateFormat: 'yyyy-mm-dd',
   closeOnBlur: true,
   selectedDate: new Date(),
