@@ -22,8 +22,10 @@ def app_index(request):
 
 def app_detail(request, app_id):
   app = Application.objects.get(id=app_id)
+  interview_form = InterviewForm()
   return render(request, 'applications/detail.html', {
     'app' : app,
+    'interview_form': interview_form
     })
 
 class AppCreate(CreateView):
@@ -38,6 +40,16 @@ class AppUpdate(UpdateView):
 class AppDelete(DeleteView):
   model = Application
   success_url = '/applications/'
+
+def add_interview(request, app_id):
+  form = InterviewForm(request.POST)
+  if form.is_valid():
+    print("interview is VALIDDD")
+    new_interview = form.save(commit=False)
+    new_interview.app_id = app_id
+    new_interview.save()
+  print("interview is INVALIDDD")
+  return redirect('app-detail', app_id=app_id)
 
 def cl_index(request):
   cls = CoverLetter.objects.all()
