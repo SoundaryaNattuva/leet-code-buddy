@@ -59,8 +59,8 @@ href="{% static 'css/app-detail.css' %}"
     </table>
   </div>
   
+  <h3>Notes</h3>
   <div class="app-notes">
-    <h3>Remarks</h3>
     {{ app.notes }}
   </div>
 
@@ -90,9 +90,7 @@ href="{% static 'css/app-detail.css' %}"
       >
       {% csrf_token %}
       {{ interview_form.as_p }}
-      <section class="add_int">
-        <button type="submit" class="button-37">Add Interview</button>
-      </section>
+      <button type="submit" class="button-37">Add Interview</button>
       </form>
     </div>
   </div>
