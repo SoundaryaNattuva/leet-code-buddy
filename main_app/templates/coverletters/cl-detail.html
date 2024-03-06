@@ -24,7 +24,7 @@
       <button type="submit" class="btn submit">Upload Document</button>
     </form>
 <h2> Uploaded Document: {{ doc.id }} </h2>
-{% comment %} <section class="doc-container">
+<section class="doc-container">
   <div class="doc-img">
     {% if doc.url %}
       <a 
@@ -35,6 +35,6 @@
       <p>No document uploaded</p>
     {% endif %}
   </div>
-</section> {% endcomment %}
+</section>
     
 {% endblock %}
