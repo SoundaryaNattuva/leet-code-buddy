@@ -22,7 +22,7 @@
         <th>Role</th>
         <th>Tags</th>
       </tr>
-      {% if cl in cls %}
+      {% if cls %}
         {% for cl in cls %}
         <tr class="rows">
           <td><a href="{% url 'cl-detail' cl.id %}">{{ cl.position }}</a></td>

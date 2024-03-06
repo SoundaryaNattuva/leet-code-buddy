@@ -1,46 +1,47 @@
 .mc-display__day {
-  font-size:clamp(1.6rem, 8vw, 2rem);
+  font-size: clamp(1.2rem, 6vw, 1.6rem); /* Decreased font size */
 }
 
 .mc-display__date {
-  font-size:clamp(8rem, 40vw, 11.2rem);
+  font-size: clamp(6rem, 30vw, 9rem); /* Decreased font size */
 }
 
 .mc-display__month {
-  font-size: clamp(1.9rem, 9vw, 2.4rem);
+  font-size: clamp(1.4rem, 7vw, 1.9rem); /* Decreased font size */
 }
 
 .mc-display__year {
-  font-size: clamp(3.8rem,18vw,4.8rem);
+  font-size: clamp(2.85rem, 13.5vw, 3.6rem); /* Decreased font size */
 }
 
 .mc-select__data--month, .mc-select__data--month span {
-  width: 40vw;
-  min-width: 8rem;
-  max-width: 10rem;
+  width: 30vw; /* Decreased width */
+  min-width: 6rem; /* Decreased min-width */
+  max-width: 8rem; /* Decreased max-width */
 }
 
 .mc-select__data--year, .mc-select__data--year span {
-  width: 22vw;
-  min-width: 4.8rem;
-  max-width: 5.6rem;
+  width: 16.5vw; /* Decreased width */
+  min-width: 3.6rem; /* Decreased min-width */
+  max-width: 4.2rem; /* Decreased max-width */
 }
 
 .mc-select__data {
-  font-size: clamp(1.6rem, 8vw, 2rem);
+  font-size: clamp(1.2rem, 6vw, 1.6rem); /* Decreased font size */
 }
 
 .mc-btn--danger,
 .mc-btn--success,
 .mc-date,
 .mc-table__weekday {
-  font-size: 1.6rem;
+  font-size: 1.2rem; /* Decreased font size */
 }
 
 .mc-table__weekday {
-  padding: .5rem;
+  padding: .4rem; /* Adjusted padding */
 }
 
 .mc-picker__footer {
-  padding: 1.6rem 0;
+  padding: 1.2rem 0; /* Adjusted padding */
 }
+

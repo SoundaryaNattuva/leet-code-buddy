@@ -30,12 +30,12 @@ def app_detail(request, app_id):
 
 class AppCreate(CreateView):
   model = Application
-  fields = ['app_date', 'position', 'company', 'enthusiasm', 'work_arrangement', 'state', 'city', 'techstack', 'status', 'minsalary', 'maxsalary', 'notes']
+  fields = ['app_date', 'position', 'company', 'application_type', 'enthusiasm', 'work_arrangement', 'state', 'city', 'techstack', 'status', 'minsalary', 'maxsalary', 'notes']
   success_url = '/applications'
 
 class AppUpdate(UpdateView):
   model = Application
-  fields = ['date', 'position', 'company', 'enthusiasm', 'work_arrangement', 'state', 'city', 'techstack', 'status', 'minsalary', 'maxsalary', 'notes']
+  fields = ['app_date', 'position', 'company', 'application_type', 'enthusiasm', 'work_arrangement', 'state', 'city', 'techstack', 'status', 'minsalary', 'maxsalary', 'notes']
 
 class AppDelete(DeleteView):
   model = Application
