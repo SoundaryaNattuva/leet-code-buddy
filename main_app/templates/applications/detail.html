@@ -68,13 +68,14 @@ href="{% static 'css/app-detail.css' %}"
     <div class="scheduled-interviews">
       <table class="interview-table">
         <thead>
-          <tr><th>Date</th><th>Time</th><th>Type</th></tr>
+          <tr><th>Date</th><th>Type</th><th>Notes</th></tr>
         </thead>
         <tbody>
-          {% for interview in interviews %}
-          <tr>
+          {% for interview in app.interview_set.all %}
+          <tr class="int_rows">
             <td>{{interview.date}}</td>
-            <td>{{interview.interviewType}}</td>
+            <td>{{interview.get_interviewType_display}}</td>
+            <td class="cell_note">{{interview.notes}}</td>
           </tr>
           {% endfor %}
         </tbody>
@@ -89,7 +90,9 @@ href="{% static 'css/app-detail.css' %}"
       >
       {% csrf_token %}
       {{ interview_form.as_p }}
-      <button type="submit" class="button-37">Add Interview</button>
+      <section class="add_int">
+        <button type="submit" class="button-37">Add Interview</button>
+      </section>
       </form>
     </div>
   </div>
