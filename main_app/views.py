@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Application, CoverLetter, Document
-from .forms import InterviewForm
+# from .forms import InterviewForm
 import uuid
 import boto3
 
@@ -22,21 +22,21 @@ def app_index(request):
 
 def app_detail(request, app_id):
   app = Application.objects.get(id=app_id)
-  interview_form = InterviewForm()
+  # interview_form = InterviewForm()
   return render(request, 'applications/detail.html', {
     'app' : app,
-    'interview_form': interview_form
+    # 'interview_form': interview_form
     })
 
-def add_interview(request, app_id):
-  form = InterviewForm(request.POST)
-  if form.is_valid():
-    print("interview is VALIDDD")
-    new_interview = form.save(commit=False)
-    new_interview.app_id = app_id
-    new_interview.save()
-  print("interview is INVALIDDD")
-  return redirect('app-detail', app_id=app_id)
+# def add_interview(request, app_id):
+#   form = InterviewForm(request.POST)
+#   if form.is_valid():
+#     print("interview is VALIDDD")
+#     new_interview = form.save(commit=False)
+#     new_interview.app_id = app_id
+#     new_interview.save()
+#   print("interview is INVALIDDD")
+#   return redirect('app-detail', app_id=app_id)
 
 class AppCreate(CreateView):
   model = Application

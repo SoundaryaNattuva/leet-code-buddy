@@ -1,3 +1,8 @@
+.dashboard-table{
+  overflow-y: auto; /* This adds a vertical scroll bar */
+  overflow-x: auto; /* This adds a horizontal scroll bar if needed */
+}
+
 .content-table {
   font-family: raleway;
   margin: 25px 0;
@@ -6,7 +11,7 @@
   min-width: 400px;
   border-radius: 5px 5px 0 0;
   overflow: hidden;
-  box-shadow: 0 0 20px rgba( 0, 0 ,0, 0.15)
+  box-shadow: 0 0 20px rgba( 0, 0 ,0, 0.15);
 }
 
 .content-table tr th {
