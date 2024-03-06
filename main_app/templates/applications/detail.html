@@ -10,14 +10,16 @@
 
 {% block content %}
 <div class="app-container">
+  
   <div class="app-header">
-    {{ app.position }} </br>
-    {{ app.company }}
+    {{ app.company }} </br>
+    {{ app.position }}
     <div class="app-actions">
       <a href="{% url 'app-update' app.id %}" class="btn warn">Edit</a>
       <a href="{% url 'app-delete' app.id %}" class="btn danger">Delete</a>
     </div>
   </div>
+
   <div class="app-info">
     <table style="width:100%" class="content-table">
       <tr>
@@ -46,40 +48,41 @@
       </tr>
     </table>
   </div>
+  
   <div class="app-notes">
-    <h2>Notes</h2>
+    <h3>Remarks</h3>
     {{ app.notes }}
   </div>
-</div>
-<div class="interviewsContainer">
-  <h2> Interviews </h2>
-  <form
-  action="{% url 'add-interview' app.id %}"
-  method="post" 
-  class="interview-form"
-  autocomplete="off"
-  >
 
-  <table class="interview-table">
-    <thead>
-      <tr><th>Date</th><th>Time</th><th>Type</th></tr>
-    </thead>
-    <tbody>
-      {% for interview in interviews %}
-        <tr>
-          <td>{{interview.date}}</td>
-          <td>{{interview.interviewType}}</td>
-        </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-
-  <h4>Add new interview</h4>
-    {% csrf_token %}
-    {{ interview_form.as_p }}
-    <button type="submit" class="button-37">Add Interview</button>
-  </form>
-
+  <div class="interviewsContainer">
+    <div class="scheduled-interviews">
+      <table class="interview-table">
+        <thead>
+          <tr><th>Date</th><th>Time</th><th>Type</th></tr>
+        </thead>
+        <tbody>
+          {% for interview in interviews %}
+          <tr>
+            <td>{{interview.date}}</td>
+            <td>{{interview.interviewType}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div class="new-interview">
+      <form
+      action="{% url 'add-interview' app.id %}"
+      method="post" 
+      class="interview-form"
+      autocomplete="off"
+      >
+      {% csrf_token %}
+      {{ interview_form.as_p }}
+      <button type="submit" class="button-37">Add Interview</button>
+      </form>
+    </div>
+  </div>
 </div>
   {% endblock %}
 

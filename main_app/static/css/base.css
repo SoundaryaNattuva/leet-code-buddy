@@ -17,7 +17,7 @@ body {
   top: 0; /* Align to the top */
   left: 0; /* Align to the left */
   height: 100%; /* Extend to the full height of the viewport */
-  background-color: rgb(44, 142, 121); /* Change the background color as needed */
+  background-color: #009879 /* Change the background color as needed */
 }
 
 .navbar ul {
@@ -27,7 +27,7 @@ body {
 }
 
 .navbar li {
-  margin-bottom: 10px; /* Add some space between list items */
+  margin-bottom: 10px;
 }
 
 .navbar a {
@@ -44,4 +44,9 @@ body {
 .body-container {
   margin-left: 210px;
   font-size: 18px;
+}
+
+img{
+width: 100px;
+padding-top: 100px;
 }
