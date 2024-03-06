@@ -225,3 +225,17 @@ form button{
   align-items: center;
   justify-content: center;
 }
+
+.cl-header a{
+  text-decoration: none;
+  color: black;
+}
+
+table .rows a{
+  text-decoration: none;
+  color: black;
+}
+
+.content-table tr:hover{
+  background-color: #c8efe7;
+}
