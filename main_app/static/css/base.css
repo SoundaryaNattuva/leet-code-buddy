@@ -5,6 +5,7 @@ body {
   font-family: raleway;
   margin-left: 50px;
   margin-bottom: 50px;
+  font-size: 16px;
 }
 
 .header {
@@ -15,11 +16,12 @@ body {
 }
 
 .navbar {
-  position: fixed; /* Fixed positioning */
-  top: 0; /* Align to the top */
-  left: 0; /* Align to the left */
-  height: 100%; /* Extend to the full height of the viewport */
-  background-color: #009879 /* Change the background color as needed */
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #009879;
+  width: 200px;
 }
 
 .navbar ul {

@@ -8,7 +8,8 @@
   margin: 25px 0;
   font-size: .9em;
   border-collapse: collapse;
-  min-width: 400px;
+  min-width: 275px;
+  max-width: 300px;
   border-radius: 5px 5px 0 0;
   overflow: hidden;
   box-shadow: 0 0 20px rgba( 0, 0 ,0, 0.15);
@@ -67,4 +68,9 @@ table a:visited {
 h1{
   margin-top: 50px;
   color: #291720;
+}
+
+.cl-header h1{
+  align-items: left;
+  border: red solid 1px;
 }
