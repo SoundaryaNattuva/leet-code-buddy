@@ -10,12 +10,15 @@
 {% endblock %}
 
 {% block content %}
+<h1>Create new template</h1>
 <form action="" method="post" class="form-container" autocomplete="off">
   {% csrf_token %}
   <table>
     {{ form.as_table }}
   </table>
-  <button type="submit" class="button-37">Submit!</button>
+  <div class="create-update-btn">
+    <button type="submit" class="button-37">Submit!</button>
+  </div>
 </form>
 
   {% endblock %}

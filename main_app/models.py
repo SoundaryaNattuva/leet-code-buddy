@@ -101,11 +101,11 @@ INTERVIEWTYPES = (
 
 # Create your models here.
 class Application(models.Model):
-  date = models.DateField('Application Submission Date', null=False, blank=True)
+  app_date = models.DateField('Application Submission Date', null=False, blank=True)
   position = models.CharField(max_length=100)
   company = models.CharField(max_length=100)
   enthusiasm = models.CharField(max_length=1, choices=SMILES, default=SMILES[0][0] )
-  workArrangement = models.CharField('Work Arrangement', max_length=1, choices=ARRANGEMENTS, default=ARRANGEMENTS[0][0])
+  work_arrangement = models.CharField('Work Arrangement', max_length=1, choices=ARRANGEMENTS, default=ARRANGEMENTS[0][0])
   state = models.CharField(max_length=2, choices=STATES, default=STATES[0][0])
   city = models.CharField(max_length=50)
   techstack = models.TextField('Technology Stack', max_length=100)
@@ -113,7 +113,7 @@ class Application(models.Model):
   minsalary = models.DecimalField('Minimum Salary',max_digits=10, decimal_places=2, null=True, blank=True)
   maxsalary = models.DecimalField('Maximum Salary', max_digits=10, decimal_places=2, null=True, blank=True)
   notes = models.TextField(max_length=1000)
-  applicationType = models.CharField(max_length=1, choices=TYPES, default=TYPES[0][0])
+  application_type = models.CharField(max_length=1, choices=TYPES, default=TYPES[0][0])
 
   def __str__(self):
     return self.position
@@ -121,9 +121,25 @@ class Application(models.Model):
   def get_absolute_url(self):
     return reverse('app-detail', kwargs={'app_id': self.id})
   
+class Interview(models.Model):
+  date = models.DateField('Interview Date', null=False, blank=True)
+  interviewType = models.CharField('Interview Type',
+    max_length=1,
+    choices=INTERVIEWTYPES,
+    default=INTERVIEWTYPES[0][0]
+  )
+  notes = models.TextField(max_length=100, default="")
+  app = models.ForeignKey(Application, on_delete=models.CASCADE)
+
+  def __str__(self):
+    return f"{self.get_interviewType_display()} on {self.date}"
   
+  class Meta: 
+    ordering = ['-date']
+
+
 class CoverLetter(models.Model):
-  date = models.DateField('Date', null=False, blank=True)
+  cl_date = models.DateField('Date', null=False, blank=True)
   position = models.CharField('Title', max_length=50, null=False, blank=True)
   letter = models.TextField('Cover Letter', max_length=2500, null=False, blank=True)
   tags = models.CharField('Tags', max_length=250)
@@ -136,9 +152,9 @@ class CoverLetter(models.Model):
   
 class Document(models.Model):
   url = models.CharField(max_length=250)
-
-  def __str__(self):
-    return self.id
+  cl = models.ForeignKey(CoverLetter, on_delete=models.CASCADE)
+  # def __str__(self):
+  #   return self.id
 
   def __str__(self):
     return f"Document for cl_id: {self.cl_id} @{self.url}"

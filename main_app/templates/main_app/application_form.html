@@ -22,13 +22,15 @@
     <table>
       {{ form.as_table }}
     </table>
-    <button type="submit" class="button-37">
-      {% if object %}
-        Update!
-      {% else %}
-        Create!
-      {% endif %}
-    </button>
+    <div class="create-update-btn">
+      <button type="submit" class="button-37">
+        {% if object %}
+          Update!
+        {% else %}
+          Create!
+        {% endif %}
+      </button>
+    </div>
   </form>
 
   {% endblock %}

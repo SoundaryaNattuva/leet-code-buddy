@@ -4,11 +4,13 @@ input[type=text], select, textarea {
   border: 1px solid #ccc;
   border-radius: 4px;
   resize: vertical;
+  color: #000000;
 }
 
 label {
   padding: 12px 12px 12px 0;
   display: inline-block;
+  color: #291720;
 }
 
 input[type=submit] {
@@ -63,3 +65,12 @@ form button{
   align-items: center;
 }
 
+.create-update-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1{
+  margin-top: 50px;
+}
