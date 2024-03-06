@@ -52,3 +52,14 @@ table a:visited {
   color: rgb(0, 0, 0);
   text-decoration: none;
 }
+
+.top-row{
+  font-size: 16px;
+  text-align: right;
+  width: 500px;
+}
+
+.top-row a{
+  color: #000000;
+  text-decoration: none; 
+}
