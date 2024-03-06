@@ -3,6 +3,7 @@ body {
   color: rgb(0, 0, 0);
   margin: 0; /* Remove default margin */
   font-family: raleway;
+  margin-left: 50px;
 }
 
 .header {
@@ -24,10 +25,11 @@ body {
   list-style-type: none;
   padding: 0;
   margin: 0;
+  text-align: left;
 }
 
 .navbar li {
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 }
 
 .navbar a {
@@ -49,4 +51,28 @@ body {
 img{
 width: 100px;
 padding-top: 100px;
+}
+
+.bottom-navbar{
+  padding-top: 150px;
+  color: white;
+}
+
+.bottom-navbar li{
+  padding-top: 10px;
+  text-align: center;
+}
+
+.bottom-navbar img{
+  width:15px;
+}
+
+.navbar li img{
+  width:15px;
+  padding-top: 10px;
+}
+
+.navbar ul li{
+  height: 100%;
+  align-items: left;
 }

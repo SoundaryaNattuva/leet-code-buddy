@@ -1,11 +1,35 @@
 {% extends 'base.html' %}
-
+{% load static %}
+{% block head %}
+<link 
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/about.css' %}"
+/>
+{% endblock %}
 {% block content %}
 
-<h1>About Job Tracker</h1>
-<hr />
-<p class="page-content">
-  Welcome to your job application tracker!
-</p>
+<h1>About QUEST</h1>
+<div class="about-container">
+  <p class="page-content">
+  Welcome to Quest, the ultimate companion for your job search journey. Quest is more than just an application tracker; Quest is about empowerment. We understand that applying for jobs can be overwhelming, with countless applications, various deadlines, and the need to tailor each application to specific roles. That's where Quest steps in.
+  </br>
+  <h3>Features:</h3>
+  Comprehensive Tracking: Log every job application with essential details like the company name, job title, salary expectations, application method (referral, company portal, or other), location, tech stack, and your enthusiasm level for the role. Quest makes it easy to keep all this information organized and accessible.
+  </br>
+  Interview Scheduler: Add and manage upcoming interview dates along with the type of interview, whether it's a technical round, HR discussion, or a panel interview. Stay on top of your schedule with reminders and prepare accordingly.
+  </br>
+  Customizable Templates: Store your cover letter templates and resumes tailored to specific roles. Whether you're applying for a Full Stack Software Engineer position or a Front End Developer role, Quest helps you maintain and organize your personalized documents for easy access and modification.
+  </br>
+  <h3>Why Quest?</h3>
+
+  Quest is built for job seekers who value organization, personalization, and efficiency. We believe that a well-organized job search is a more effective job search. By providing you with the tools to meticulously track your applications, schedule interviews, and tailor your resumes and cover letters, Quest turns the daunting task of job hunting into a manageable and even enjoyable journey.
+
+  Our goal is to help you navigate through your career path with confidence and ease. With Quest, you're not just applying for jobs; you're embarking on a quest for your dream career. Join us, and let's turn your job search into a successful adventure.
+  <h3> Get Started Today </h3>
+
+  Sing up for Quest now and take the first step towards organizing your job search and securing your next great opportunity. Your quest for the perfect job begins here.
+  </p>
+</div>
 
 {% endblock %}

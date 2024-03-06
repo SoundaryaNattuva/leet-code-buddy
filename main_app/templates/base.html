@@ -24,12 +24,18 @@
     <nav class="navbar">
       <img src="{% static 'images/small_quest.png' %}" alt="Quest Logo">
       <ul>
-        <li><a href="{% url 'home' %}">Home</a></li>
-        <li><a href="{% url 'about' %}">About</a></li>
-        <li><a href="{% url 'app-index' %}">Dashboard</a></li>
-        <li><a href="{% url 'app-create' %}">Log new application</a></li>
-        <li><a href="{% url 'cl-index' %}">Cover Letters</a></li>
+        <li><a href="{% url 'home' %}"><img src="{% static 'images/home.png' %}"> Home</a></li>
+        <li><a href="{% url 'about' %}"><img src="{% static 'images/about.png' %}"> About</a></li>
+        <li><a href="{% url 'app-index' %}"><img src="{% static 'images/log.png' %}"> Dashboard</a></li>
+        <li><a href="{% url 'app-create' %}"><img src="{% static 'images/create.png' %}"> Log new application</a></li>
+        <li><a href="{% url 'cl-index' %}"><img src="{% static 'images/resume.png' %}"> Cover Letters</a></li>
       </ul>
+      <nav class="bottom-navbar">
+        <ul>
+          <li><img src="{% static 'images/logout.png' %}">   Log out</li>
+          <li>LinkedIn</li>
+        </ul>
+      </nav>
     </nav>
   </header>
   <main>
@@ -40,3 +46,4 @@
   </main>
 </body>
 </html>
+
