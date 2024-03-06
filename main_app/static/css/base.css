@@ -4,6 +4,7 @@ body {
   margin: 0; /* Remove default margin */
   font-family: raleway;
   margin-left: 50px;
+  margin-bottom: 50px;
 }
 
 .header {
@@ -75,4 +76,9 @@ padding-top: 100px;
 .navbar ul li{
   height: 100%;
   align-items: left;
+}
+
+.network img{
+  width: 200px;
+
 }
