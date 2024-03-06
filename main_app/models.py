@@ -121,6 +121,7 @@ class Application(models.Model):
   def get_absolute_url(self):
     return reverse('app-detail', kwargs={'app_id': self.id})
   
+  
 class CoverLetter(models.Model):
   date = models.DateField('Date', null=False, blank=True)
   position = models.CharField('Title', max_length=50, null=False, blank=True)
@@ -144,7 +145,6 @@ class Document(models.Model):
   
 class Interview(models.Model):
   date = models.DateField('Interview Date')
-  time = models.TimeField()
   interviewType = models.CharField('Interview Type',
     max_length=1,
     choices=INTERVIEWTYPES,
@@ -152,9 +152,9 @@ class Interview(models.Model):
   )
   notes = models.TextField(max_length=100, default="")
   app = models.ForeignKey(Application, on_delete=models.CASCADE)
-  
+
   def __str__(self):
-    return f"{self.get_interview_display()} on {self.date}"
+    return f"{self.get_interviewType_display()} on {self.date}"
   
   class Meta: 
     ordering = ['-date']

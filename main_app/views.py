@@ -28,6 +28,16 @@ def app_detail(request, app_id):
     'interview_form': interview_form
     })
 
+def add_interview(request, app_id):
+  form = InterviewForm(request.POST)
+  if form.is_valid():
+    print("interview is VALIDDD")
+    new_interview = form.save(commit=False)
+    new_interview.app_id = app_id
+    new_interview.save()
+  print("interview is INVALIDDD")
+  return redirect('app-detail', app_id=app_id)
+
 class AppCreate(CreateView):
   model = Application
   fields = ['date', 'position', 'company', 'enthusiasm', 'workArrangement', 'state', 'city', 'techstack', 'status', 'minsalary', 'maxsalary', 'notes']
@@ -83,10 +93,3 @@ def add_doc(request, cl_id):
       print('An error occurred uploading file to S3: %s' % err)
   return redirect('cl-detail', cl_id=cl_id)
 
-def add_interview(request, app_id):
-  form = InterviewForm(request.POST)
-  if form.is_valid():
-    new_interview = form.save(commit=False)
-    new_interview.app_id = app_id
-    new_interview.save()
-  return redirect('app-detail', app_id=app_id)
