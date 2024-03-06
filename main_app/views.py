@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Application, CoverLetter, Document
-# from .forms import InterviewForm
+from .forms import InterviewForm
 import uuid
 import boto3
 
@@ -65,7 +65,7 @@ def cl_detail(request, cl_id):
 
 class ClCreate(CreateView):
   model = CoverLetter
-  fields = ['date', 'position', 'letter', 'tags']
+  fields = ['cl_date', 'position', 'letter', 'tags']
   success_url = '/coverletters'
 
 class ClUpdate(UpdateView):
