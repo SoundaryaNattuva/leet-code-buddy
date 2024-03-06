@@ -57,7 +57,7 @@ def cl_index(request):
 
 def cl_detail(request, cl_id):
   cl = CoverLetter.objects.get(id=cl_id)
-  doc = Document.objects.get(id=id)
+  doc = Document.objects.get(cl_id=cl_id)
   return render(request, 'coverletters/cl-detail.html', {
     'cl' : cl, 
     'doc': doc, 
@@ -84,7 +84,7 @@ def add_doc(request, cl_id):
     try:
       s3.upload_fileobj(doc_file, BUCKET, key)
       url = f"{S3_BASE_URL}{BUCKET}/{key}"
-      document = Document(url=url, id=cl_id)
+      document = Document(url=url, cl_id=cl_id)
       cl_document = Document.objects.filter(id=cl_id)
       if cl_document.first():
         cl_document.first().delete()
