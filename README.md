@@ -1,10 +1,10 @@
 # quest. for hire.
 
-![Alt questLogo](https://i.imgur.com/mawxI22.png)
+<div align=”center”>![Alt questLogo](https://i.imgur.com/mawxI22.png)</div>
 
 Welcome aboard Quest – your trusty sidekick in the thrilling adventure of job hunting! 🚀 Beyond a mere application tracker, Quest is your key to empowerment in the job search realm. Say goodbye to the stress and chaos of endless applications and deadlines. With Quest by your side, you're equipped to conquer each job opportunity with precision and panache. Dive into the excitement and let Quest guide you through the maze of job applications, ensuring each one is perfectly tailored to unlock your dream role! 🌟 Welcome to a whole new level of job search journey – welcome to Quest! 🎉
 
-# [Visit me to help your quest for hire 🌟](https://leet-code-buddy.fly.dev/)
+# [Click me to embark on your quest for hire 🌟](https://leet-code-buddy.fly.dev/)
 
 ## Icebox items 🧊
 - [ ] Add a search bar to swift through applications and templates.
