@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block head %}
+<link 
+rel="stylesheet"
+type="text/css"
+href="{% static 'css/cl-detail.css' %}"
+/>
 {% endblock %}
 
 {% block content %}
@@ -10,7 +15,45 @@
   <a href="{% url 'cl-delete' cl.id %}" class="btn danger">Delete</a>
 </div>
 
-<h1>Please upload resume to match cover letter</h1>
+<div class="cl-detail-container">
+  <table class="cl-detail-table">
+    <thead>
+      <tr>
+        <th>Date Created</th>
+        <td>{{cl.cl_date}}</td>
+      </tr>
+      <tr>
+        <th>Role</th>
+        <td>{{cl.position}}</td>
+      </tr>
+      <tr>
+        <th>tags</th>
+        <td>{{cl.tags}}</td>
+      </tr>
+    </thead>
+  </table>
+<div>
+
+<h3>Cover Letter</h3>
+<div class="letter-cont">
+  {{cl.letter}}
+</div>
+
+<section class="doc-container">
+  <h3> Resume: </h3>
+  <div class="doc-img">
+    {% if doc %}
+      <a 
+        href="{{doc.url}}" 
+        alt="A document of {{doc.id}}"
+      > {{ cl.position }}_{{ cl.cl_date }} Resume </a>
+    {% else %}
+      <p>No document uploaded</p>
+    {% endif %}
+  </div>
+</section>
+
+<h3>Upload corresponding Resume</h3>
 <p id="file-name"></p>
     <form 
       action="{% url 'add-doc' cl.id %}"
@@ -19,23 +62,11 @@
     >
       {% csrf_token %}
       <label class="btn secondary">
-        Choose Resume
         <input type="file" name="doc-file" id="file-input">
       </label>
-      <button type="submit" class="btn submit">Upload Document</button>
+      <br>
+      <button type="submit" class="button-37">Upload Document</button>
     </form>
-<h2> Uploaded Document: </h2>
-<section class="doc-container">
-  <div class="doc-img">
-    {% if doc %}
-      <a 
-        src="{{doc.url}}" 
-        alt="A document of {{doc.id}}"
-      > {{ doc.id }} </a>
-    {% else %}
-      <p>No document uploaded</p>
-    {% endif %}
-  </div>
-</section>
+  
     
 {% endblock %}

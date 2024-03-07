@@ -1,0 +1,126 @@
+.app-container{
+  align-items: center;
+}
+
+.app-header{
+  color:#282c2b;
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 20px;
+  /* border: 1px solid rgb(225, 55, 83); */
+}
+
+.app-info{
+  display: flex;
+  justify-content: center; /* Horizontally center the flex items */
+  align-items: center;
+}
+
+.app-actions{
+  font-size: 16px;
+}
+
+.cl-detail-table {
+  font-family: raleway;
+  margin: 25px 0;
+  font-size: .9em;
+  border-collapse: collapse;
+  min-width: 400px;
+  max-width: 600px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba( 0, 0 ,0, 0.15);
+}
+
+.cl-detail-table tr th {
+  background-color: #009879;
+  color: white;
+  text-align: left;
+  font-weight: bold;
+}
+
+.cl-detail-table th,
+.cl-detail-table td{
+  padding: 12px 15px;
+}
+
+.cl-detail-table th{
+  width: 100px;
+}
+
+
+.cl-detail-table tbody td{
+  border-bottom: 1px solid gray;
+  color: black
+}
+.cl-detail-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.cl-detail-table td {
+  border: 1px solid gray;
+}
+
+.button-37 {
+  background-color: #009879;
+  border: 1px solid #009879;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+  outline: 0;
+  margin-top: 20px;
+  padding: 10px 25px;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 150ms, box-shadow 150ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 200px;
+}
+
+.button-37:hover {
+  box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
+  transform: translateY(-2px);
+}
+
+@media (min-width: 768px) {
+  .button-37 {
+    padding: 10px 30px;
+  }
+}
+
+button-37[type=submit]:hover {
+  background-color: #45a049;
+}
+
+form button{
+  align-items: center;
+}
+
+.letter-cont{
+  border:#009879 solid 1px;
+  width: 700px;
+  height: 400px;
+  padding: 15px;
+  border-radius: 15px;
+  background-color: rgb(237, 243, 235);
+  white-space: pre-wrap;
+  overflow-y: auto;
+}
+
+#file-input{
+  font-family: raleway;
+  font-size: 16px;
+}
+
+form{
+  display: inline-block;
+}

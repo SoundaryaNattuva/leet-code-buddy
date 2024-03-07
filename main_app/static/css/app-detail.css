@@ -161,8 +161,9 @@ form button{
   margin: 10px;
   display: flex;
   justify-content: center;
-  min-width: 600px;
+  min-width: 700px;
   max-width: 800px;
+  align-items: center;
 }
 
 .scheduled-interviews, .new-interview {
