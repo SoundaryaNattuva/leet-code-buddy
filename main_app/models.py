@@ -114,7 +114,8 @@ class Application(models.Model):
   maxsalary = models.DecimalField('Maximum Salary', max_digits=10, decimal_places=2, null=True, blank=True)
   notes = models.TextField(max_length=1000)
   application_type = models.CharField(max_length=1, choices=TYPES, default=TYPES[0][0])
-
+  user = models.ForeignKey(User, on_delete=models.CASCADE)
+  
   def __str__(self):
     return self.position
   
@@ -153,7 +154,6 @@ class CoverLetter(models.Model):
 class Document(models.Model):
   url = models.CharField(max_length=250)
   cl = models.ForeignKey(CoverLetter, on_delete=models.CASCADE)
-  upload_date = models.DateTimeField(null=True, blank=True)
 
   def __str__(self):
     return f"Document for cl_id: {self.cl_id} @{self.url}"
