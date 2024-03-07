@@ -153,6 +153,7 @@ class CoverLetter(models.Model):
 class Document(models.Model):
   url = models.CharField(max_length=250)
   cl = models.ForeignKey(CoverLetter, on_delete=models.CASCADE)
+  upload_date = models.DateTimeField(null=True, blank=True)
 
   def __str__(self):
     return f"Document for cl_id: {self.cl_id} @{self.url}"

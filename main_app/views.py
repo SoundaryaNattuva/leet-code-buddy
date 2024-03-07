@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Application, CoverLetter, Document
 from .forms import InterviewForm
+from datetime import date
 import uuid
 import boto3
 
@@ -87,7 +88,8 @@ def add_doc(request, cl_id):
     try:
       s3.upload_fileobj(doc_file, BUCKET, key)
       url = f"{S3_BASE_URL}{BUCKET}/{key}"
-      document = Document(url=url, cl_id=cl_id)
+      upload_date = date.today()
+      document = Document(url=url, cl_id=cl_id, upload_date=upload_date)
       cl_document = Document.objects.filter(id=cl_id)
       if cl_document.first():
         cl_document.first().delete()
