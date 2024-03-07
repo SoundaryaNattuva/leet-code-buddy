@@ -1,0 +1,27 @@
+
+
+.home_container{
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.left_cont {
+  width: 50%;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left_cont img{
+  width: 375px;
+}
+
+.right_cont {
+  width: 50%;
+  height: 600px;
+  display: inline-block;
+}
