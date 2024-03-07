@@ -25,15 +25,22 @@
     <nav class="navbar">
       <img src="{% static 'images/small_quest.png' %}" alt="Quest Logo">
       <ul>
-        <li><a href="{% url 'home' %}"><img src="{% static 'images/home.png' %}"> Home</a></li>
-        <li><a href="{% url 'about' %}"><img src="{% static 'images/about.png' %}"> About</a></li>
-        <li><a href="{% url 'app-index' %}"><img src="{% static 'images/log.png' %}"> Dashboard</a></li>
-        <li><a href="{% url 'app-create' %}"><img src="{% static 'images/create.png' %}"> New application</a></li>
-        <li><a href="{% url 'cl-index' %}"><img src="{% static 'images/resume.png' %}"> Templates </a></li>
-        <li><a><img src="{% static 'images/logout.png' %}">Log out</a></li>
-        <li class="social"><a href="https://www.linkedin.com/in/soundaryanattuva/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin" style="color: #ffffff;"></i></a></li>
-        </div>
-        <li class="social"><a href="https://github.com/SoundaryaNattuva" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-square-github" style="color: #ffffff;"></i></a></li>
+        {% if user.is_authenticated %}
+          <li><a href="{% url 'home' %}"><img src="{% static 'images/home.png' %}"> Home</a></li>
+          <li><a href="{% url 'about' %}"><img src="{% static 'images/about.png' %}"> About</a></li>
+          <li><a href="{% url 'app-index' %}"><img src="{% static 'images/log.png' %}"> Dashboard</a></li>
+          <li><a href="{% url 'app-create' %}"><img src="{% static 'images/create.png' %}"> New application</a></li>
+          <li><a href="{% url 'cl-index' %}"><img src="{% static 'images/resume.png' %}"> Templates </a></li>
+          <li><a><img src="{% static 'images/logout.png' %}">Log out</a></li>
+          <li class="social"><a href="https://www.linkedin.com/in/soundaryanattuva/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin" style="color: #ffffff;"></i></a></li>
+          <li class="social"><a href="https://github.com/SoundaryaNattuva" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-square-github" style="color: #ffffff;"></i></a></li>
+        {% else %}
+          <li><a href="{% url 'home' %}"><img src="{% static 'images/home.png' %}"> Home</a></li>
+          <li><a href="{% url 'about' %}"><img src="{% static 'images/about.png' %}"> About</a></li>
+          <li class="social"><a href="https://www.linkedin.com/in/soundaryanattuva/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin" style="color: #ffffff;"></i></a></li>
+          <li class="social"><a href="https://github.com/SoundaryaNattuva" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-square-github" style="color: #ffffff;"></i></a></li>
+          {% endif %}
+        
       </ul>
     </nav>
   </header>

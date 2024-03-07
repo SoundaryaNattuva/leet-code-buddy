@@ -34,6 +34,10 @@ class AppCreate(CreateView):
   model = Application
   fields = ['app_date', 'position', 'company', 'application_type', 'enthusiasm', 'work_arrangement', 'state', 'city', 'techstack', 'status', 'minsalary', 'maxsalary', 'notes']
   success_url = '/applications'
+    
+  def form_valid(self, form):
+    form.instance.user = self.request.user
+    return super().form_valid(form)
 
 class AppUpdate(UpdateView):
   model = Application
