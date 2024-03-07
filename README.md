@@ -1,8 +1,10 @@
 # quest. for hire.
 
-![Alt questLogo](/Users/soundaryanattuva/code/sei/projects/leet-code-buddy/main_app/static/images/questLogo.png)
+![Alt questLogo](https://i.imgur.com/mawxI22.png)
 
 Welcome aboard Quest – your trusty sidekick in the thrilling adventure of job hunting! 🚀 Beyond a mere application tracker, Quest is your key to empowerment in the job search realm. Say goodbye to the stress and chaos of endless applications and deadlines. With Quest by your side, you're equipped to conquer each job opportunity with precision and panache. Dive into the excitement and let Quest guide you through the maze of job applications, ensuring each one is perfectly tailored to unlock your dream role! 🌟 Welcome to a whole new level of job search journey – welcome to Quest! 🎉
+
+# [Visit me to help your quest for hire 🌟](https://leet-code-buddy.fly.dev/)
 
 ## Icebox items 🧊
 - [ ] Add a search bar to swift through applications and templates.
@@ -10,12 +12,11 @@ Welcome aboard Quest – your trusty sidekick in the thrilling adventure of job 
 - [ ] Make the web app mobile responsive
 - [ ] Add a delete and update functionality to the scheduled interviews
 
-
 ## Resources used 👩🏽‍💻
 - [Mozilla Developer](https://developer.mozilla.org/en-US/)
 - [W3 Schools](https://www.w3schools.com/css/css_table.asp)
 - [DCode - Table CSS](https://www.youtube.com/watch?v=biI9OFH6Nmg)
-- 
+
 ## Attributions 🛟
 - [Canva - Favicon and Logo](https://www.canva.com/)
 - [Google Fonts](https://fonts.google.com/)
