@@ -1,25 +1,27 @@
-# LEET CODE Budy
+# quest. for hire.
 
-The LEET CODE buddy will be your post GA buddy! Log in to track your progress and record your mistakes because "the only real mistake is the one from which we learn nothing". 
+![Alt questLogo](/Users/soundaryanattuva/code/sei/projects/leet-code-buddy/main_app/static/images/questLogo.png)
+
+Welcome aboard Quest – your trusty sidekick in the thrilling adventure of job hunting! 🚀 Beyond a mere application tracker, Quest is your key to empowerment in the job search realm. Say goodbye to the stress and chaos of endless applications and deadlines. With Quest by your side, you're equipped to conquer each job opportunity with precision and panache. Dive into the excitement and let Quest guide you through the maze of job applications, ensuring each one is perfectly tailored to unlock your dream role! 🌟 Welcome to a whole new level of job search journey – welcome to Quest! 🎉
 
 ## Icebox items 🧊
-- [ ] Create a difficult mode encompassing a timer.
-- [ ] Have a no-gravity mode where the keys on the board float around.
-- [ ] Be mobile responsive
-- [ ] Have an instructions drop-down
+- [ ] Add a search bar to swift through applications and templates.
+- [ ] Have a stats page which shows applications applied to, interviewing and secured.
+- [ ] Make the web app mobile responsive
+- [ ] Add a delete and update functionality to the scheduled interviews
 
 
 ## Resources used 👩🏽‍💻
 - [Mozilla Developer](https://developer.mozilla.org/en-US/)
-- [Coolors](https://coolors.co/palettes/trending)
-- [Canva - Favicon](https://www.canva.com/)
-- [Alien encourgement audio](https://www.youtube.com/watch?v=k9zTr2MAFRg)
-
+- [W3 Schools](https://www.w3schools.com/css/css_table.asp)
+- [DCode - Table CSS](https://www.youtube.com/watch?v=biI9OFH6Nmg)
+- 
 ## Attributions 🛟
-- [FreeSound](https://freesound.org/)
+- [Canva - Favicon and Logo](https://www.canva.com/)
 - [Google Fonts](https://fonts.google.com/)
 - [Font Awesome](https://fontawesome.com/)
-- [Animate CSS](https://animate.style/)
+- [Coolors](https://coolors.co/palettes/trending)
+- [Icons8 - Icons](https://icons8.com/icon/set/create/group-ui)
 
 ## Technologies used ⚙️
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
@@ -27,3 +29,8 @@ The LEET CODE buddy will be your post GA buddy! Log in to track your progress an
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![DJango](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)
+![Amazon S3](https://img.shields.io/badge/Amazon_AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)
+![Neon](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
