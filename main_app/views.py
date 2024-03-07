@@ -1,6 +1,10 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.views import LoginView
+from django.contrib.auth import login
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Application, CoverLetter, Document
 from .forms import InterviewForm
 from datetime import date
@@ -15,13 +19,29 @@ BUCKET = 'aryanatts-app-collector'
 class Home(LoginView):
   template_name = 'home.html'
 
+def signup(request):
+  error_message = ''
+  if request.method == 'POST':
+    form = UserCreationForm(request.POST)
+    if form.is_valid():
+      user = form.save()
+      login(request, user)
+      return redirect('about.html')
+    else:
+      error_message = 'Invalid sign up - try again'
+  form = UserCreationForm()
+  context = {'form': form, 'error_message': error_message}
+  return render(request, 'signup.html', context)
+
 def about(request):
   return render(request, 'about.html')
 
+@login_required
 def app_index(request):
-  apps = Application.objects.all()
+  apps = Application.objects.filter(user=request.user)
   return render(request, 'applications/index.html', { 'apps': apps })
 
+@login_required
 def app_detail(request, app_id):
   app = Application.objects.get(id=app_id)
   interview_form = InterviewForm()
@@ -30,7 +50,7 @@ def app_detail(request, app_id):
     'interview_form': interview_form
     })
 
-class AppCreate(CreateView):
+class AppCreate(LoginRequiredMixin, CreateView):
   model = Application
   fields = ['app_date', 'position', 'company', 'application_type', 'enthusiasm', 'work_arrangement', 'state', 'city', 'techstack', 'status', 'minsalary', 'maxsalary', 'notes']
   success_url = '/applications'
@@ -39,14 +59,15 @@ class AppCreate(CreateView):
     form.instance.user = self.request.user
     return super().form_valid(form)
 
-class AppUpdate(UpdateView):
+class AppUpdate(LoginRequiredMixin, UpdateView):
   model = Application
   fields = ['app_date', 'position', 'company', 'application_type', 'enthusiasm', 'work_arrangement', 'state', 'city', 'techstack', 'status', 'minsalary', 'maxsalary', 'notes']
 
-class AppDelete(DeleteView):
+class AppDelete(LoginRequiredMixin, DeleteView):
   model = Application
   success_url = '/applications/'
 
+@login_required
 def add_interview(request, app_id):
   form = InterviewForm(request.POST)
   if form.is_valid():
@@ -57,10 +78,12 @@ def add_interview(request, app_id):
   print("interview is INVALIDDD")
   return redirect('app-detail', app_id=app_id)
 
+@login_required
 def cl_index(request):
   cls = CoverLetter.objects.all()
   return render(request, 'coverletters/cl-index.html', { 'cls': cls })
 
+@login_required
 def cl_detail(request, cl_id):
   cl = CoverLetter.objects.get(id=cl_id)
   try: 
@@ -72,19 +95,20 @@ def cl_detail(request, cl_id):
     'doc': doc, 
     })
 
-class ClCreate(CreateView):
+class ClCreate(LoginRequiredMixin, CreateView):
   model = CoverLetter
   fields = ['cl_date', 'position', 'letter', 'tags']
   success_url = '/coverletters'
 
-class ClUpdate(UpdateView):
+class ClUpdate(LoginRequiredMixin, UpdateView):
   model = CoverLetter
   fields = ['cl_date', 'position', 'letter', 'tags']
 
-class ClDelete(DeleteView):
+class ClDelete(LoginRequiredMixin, DeleteView):
   model = CoverLetter
   success_url = '/coverletters'
 
+@login_required
 def add_doc(request, cl_id):
   doc_file = request.FILES.get('doc-file', None)
   if doc_file:
