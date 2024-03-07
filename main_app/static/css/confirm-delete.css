@@ -2,7 +2,65 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: solid 1px purple;
-  color: pink;
-  background-color: red;
+  color: black;
+  padding-top: 30%;
+  width: 400px;
+}
+
+.cancel-delete-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-37 {
+  background-color: #009879;
+  border: 1px solid #009879;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+  outline: 0;
+  margin-top: 20px;
+  padding: 10px 25px;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 150ms, box-shadow 150ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-37:hover {
+  box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
+  transform: translateY(-2px);
+}
+
+@media (min-width: 768px) {
+  .button-37 {
+    padding: 10px 30px;
+  }
+}
+
+.button-37[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.button-37 a{
+  text-decoration: none;
+  color: white
+}
+
+.button-37 a:visited{
+  text-decoration: none;
+  color: white
+}
+
+form button{
+  align-items: center;
 }
