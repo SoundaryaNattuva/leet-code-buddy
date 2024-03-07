@@ -4,11 +4,12 @@
 {% endblock %}
 
 {% block content %}
-<h1>This is the details page for {{ cl.position }} at {{cl.company}}</h1>
+<h1>{{ cl.position }}</h1>
 <div class="app-actions">
   <a href="{% url 'cl-update' cl.id %}" class="btn warn">Edit</a>
   <a href="{% url 'cl-delete' cl.id %}" class="btn danger">Delete</a>
 </div>
+
 <h1>Please upload resume to match cover letter</h1>
 <p id="file-name"></p>
     <form 
@@ -23,10 +24,10 @@
       </label>
       <button type="submit" class="btn submit">Upload Document</button>
     </form>
-<h2> Uploaded Document: {{ doc.id }} </h2>
+<h2> Uploaded Document: </h2>
 <section class="doc-container">
   <div class="doc-img">
-    {% if doc.url %}
+    {% if doc %}
       <a 
         src="{{doc.url}}" 
         alt="A document of {{doc.id}}"

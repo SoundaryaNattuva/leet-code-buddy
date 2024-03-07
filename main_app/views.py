@@ -57,7 +57,10 @@ def cl_index(request):
 
 def cl_detail(request, cl_id):
   cl = CoverLetter.objects.get(id=cl_id)
-  doc = Document.objects.get(cl_id=cl_id)
+  try: 
+    doc = Document.objects.get(cl_id=cl_id)
+  except:
+    doc = None
   return render(request, 'coverletters/cl-detail.html', {
     'cl' : cl, 
     'doc': doc, 
@@ -70,7 +73,7 @@ class ClCreate(CreateView):
 
 class ClUpdate(UpdateView):
   model = CoverLetter
-  fields = ['date', 'position', 'letter', 'tags']
+  fields = ['cl_date', 'position', 'letter', 'tags']
 
 class ClDelete(DeleteView):
   model = CoverLetter

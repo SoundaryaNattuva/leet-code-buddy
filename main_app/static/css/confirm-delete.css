@@ -1,0 +1,8 @@
+.confirm-delete{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 1px purple;
+  color: pink;
+  background-color: red;
+}
