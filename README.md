@@ -1,16 +1,19 @@
 # quest. for hire.
 
-![Alt questLogo](https://i.imgur.com/L3zNmfz.png)
-<img align="left" width="100" height="100" src="https://i.imgur.com/L3zNmfz.png">
+<img align="left" width="400" height="100" src="https://i.imgur.com/L3zNmfz.png">
 
 Welcome aboard Quest – your trusty sidekick in the thrilling adventure of job hunting! 🚀 Beyond a mere application tracker, Quest is your key to empowerment in the job search realm. Say goodbye to the stress and chaos of endless applications and deadlines. With Quest by your side, you're equipped to conquer each job opportunity with precision and panache. Dive into the excitement and let Quest guide you through the maze of job applications, ensuring each one is perfectly tailored to unlock your dream role! 🌟 Cheers to a whole new level of job search journey – welcome to Quest! 🎉
 
 
 # [Click me to embark on your quest for hire 🌟](https://leet-code-buddy.fly.dev/)
 
-
+## Application Index 
 ![Image](https://i.imgur.com/9Gf6LeR.png)
+
+## Application Details
 ![Image](https://i.imgur.com/1iJeNsM.png)
+
+## Template to store cover letter and resume
 ![Image](https://i.imgur.com/XgAJb1V.png)
 
 
@@ -22,7 +25,7 @@ Welcome aboard Quest – your trusty sidekick in the thrilling adventure of job 
 
 ## Entity Relational Diagram
 ![Image](https://i.imgur.com/U5sjlAY.png)
-# [Visit my ERD](https://whimsical.com/jobtracker-3uz6gVntBdN89Kkx3KbJEn)
+# [Visit my ERD ✨](https://whimsical.com/jobtracker-3uz6gVntBdN89Kkx3KbJEn)
 
 ## Resources used 👩🏽‍💻
 - [Mozilla Developer](https://developer.mozilla.org/en-US/)
