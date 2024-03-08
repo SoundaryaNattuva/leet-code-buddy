@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {% block head %}
 <link 
   rel="stylesheet"
@@ -7,6 +8,7 @@
   href="{% static 'css/confirm-delete.css' %}"
 />
 {% endblock %}
+
 {% block content %}
 <div class="confirm-delete">
   <h2>Are you sure you want to delete the template for {{ object.position}}?</h2>
@@ -15,11 +17,8 @@
 <div class="cancel-delete-btn">
   <form action="" method="post" class="form">
     {% csrf_token %}
-    <button class='button-37'><a href="{% url 'cl-detail' object.id %}" class="btn secondary">
-      Cancel
-    </a></button>
+    <button class='button-37'><a href="{% url 'cl-detail' object.id %}" class="btn secondary"> Cancel </a></button>
     <button type="submit" class="button-37">Delete</button>
   </form>
 </div>
-
-  {% endblock %}
+{% endblock %}

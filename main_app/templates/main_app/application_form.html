@@ -17,32 +17,29 @@
   href="{% static 'css/form.css' %}"
 />
 <script defer src="{% static 'js/app-form.js' %}"></script>
-
-
 {% endblock %}
 
 {% block content %}
-  <div class="page-header">
-    {% if object %}
-      <h1>Edit {{ object.position }} at {{ object.company }}</h1>
-    {% else %}
-      <h1>Log new application</h1>
-    {% endif %}
+<div class="page-header">
+  {% if object %}
+    <h1>Edit {{ object.position }} at {{ object.company }}</h1>
+  {% else %}
+    <h1>Log new application</h1>
+  {% endif %}
+</div>
+<form action="" method="post" class="form-container">
+  {% csrf_token %}
+  <table>
+    {{ form.as_table }}
+  </table>
+  <div class="create-update-btn">
+    <button type="submit" class="button-37">
+      {% if object %}
+        Update!
+      {% else %}
+        Create!
+      {% endif %}
+    </button>
   </div>
-  <form action="" method="post" class="form-container">
-    {% csrf_token %}
-    <table>
-      {{ form.as_table }}
-    </table>
-    <div class="create-update-btn">
-      <button type="submit" class="button-37">
-        {% if object %}
-          Update!
-        {% else %}
-          Create!
-        {% endif %}
-      </button>
-    </div>
-  </form>
-
-  {% endblock %}
+</form>
+{% endblock %}

@@ -1,14 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {% block head %}
 <link 
   href="https://cdn.jsdelivr.net/npm/mc-datepicker/dist/mc-calendar.min.css" 
   rel="stylesheet" 
 />
 <link rel="stylesheet" href="{% static 'css/mcdp.css' %}">
-<script 
-  src="https://cdn.jsdelivr.net/npm/mc-datepicker/dist/mc-calendar.min.js"
->
+<script src="https://cdn.jsdelivr.net/npm/mc-datepicker/dist/mc-calendar.min.js">
 </script>
 <link 
 rel="stylesheet"
@@ -20,7 +19,6 @@ href="{% static 'css/app-detail.css' %}"
 
 {% block content %}
 <div class="app-container">
-  
   <div class="app-header">
     {{ app.company }} </br>
     {{ app.position }}
@@ -29,7 +27,6 @@ href="{% static 'css/app-detail.css' %}"
       <a href="{% url 'app-delete' app.id %}" class="btn danger">Delete</a>
     </div>
   </div>
-
   <div class="app-info">
     <table style="width:100%" class="content-table">
       <tr>
@@ -58,42 +55,39 @@ href="{% static 'css/app-detail.css' %}"
       </tr>
     </table>
   </div>
-  
   <h3>Notes</h3>
   <div class="app-notes">
     {{ app.notes }}
   </div>
-
 <div class="interviewsContainer">
-    <div class="scheduled-interviews">
-      <table class="interview-table">
-        <thead>
-          <tr><th>Date</th><th>Type</th><th>Notes</th></tr>
-        </thead>
-        <tbody>
-          {% for interview in app.interview_set.all %}
-          <tr class="int_rows">
-            <td>{{interview.date}}</td>
-            <td>{{interview.get_interviewType_display}}</td>
-            <td class="cell_note">{{interview.notes}}</td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-    </div>
-    <div class="new-interview">
-      <form
-      action="{% url 'add-interview' app.id %}"
-      method="post" 
-      class="interview-form"
-      autocomplete="off"
-      >
-      {% csrf_token %}
-      {{ interview_form.as_p }}
-      <button type="submit" class="button-37">Add Interview</button>
-      </form>
-    </div>
+  <div class="scheduled-interviews">
+    <table class="interview-table">
+      <thead>
+        <tr><th>Date</th><th>Type</th><th>Notes</th></tr>
+      </thead>
+      <tbody>
+        {% for interview in app.interview_set.all %}
+        <tr class="int_rows">
+          <td>{{interview.date}}</td>
+          <td>{{interview.get_interviewType_display}}</td>
+          <td class="cell_note">{{interview.notes}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div class="new-interview">
+    <form
+    action="{% url 'add-interview' app.id %}"
+    method="post" 
+    class="interview-form"
+    autocomplete="off"
+    >
+    {% csrf_token %}
+    {{ interview_form.as_p }}
+    <button type="submit" class="button-37">Add Interview</button>
+    </form>
   </div>
 </div>
-  {% endblock %}
+{% endblock %}
 

@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {% block head %}
 <link 
   rel="stylesheet"
@@ -7,8 +8,8 @@
   href="{% static 'css/cl-index.css' %}"
 />
 {% endblock %}
-{% block content %}
 
+{% block content %}
 <section class="card-container">
   <h1>Templates</h1>
   <div class="cl-header">
@@ -31,15 +32,15 @@
           <td>{{ cl.tags }}</td>
         </tr>
         {% endfor %}
-        {% else %}
+      {% else %}
       <tr class="rows">
         <td>No Templates</td>
         <td></td>
         <td></td>
         <td></td>
       </tr>
-    {% endif %}
-    <table>
+      {% endif %}
+    </table>
   </div>
 </section>
 

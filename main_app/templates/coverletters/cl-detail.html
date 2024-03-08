@@ -14,7 +14,6 @@ href="{% static 'css/cl-detail.css' %}"
   <a href="{% url 'cl-update' cl.id %}" class="btn warn">Edit</a>
   <a href="{% url 'cl-delete' cl.id %}" class="btn danger">Delete</a>
 </div>
-
 <div class="cl-detail-container">
   <table class="cl-detail-table">
     <thead>
@@ -32,7 +31,7 @@ href="{% static 'css/cl-detail.css' %}"
       </tr>
     </thead>
   </table>
-<div>
+</div>
 
 <h3>Cover Letter</h3>
 <div class="letter-cont">
@@ -43,10 +42,9 @@ href="{% static 'css/cl-detail.css' %}"
   <h3> Resume: </h3>
   <div class="doc-img">
     {% if doc %}
-      <a 
-        href="{{doc.url}}" 
-        alt="A document of {{doc.id}}"
-      > {{ cl.position }}_{{ cl.cl_date }} Resume </a>
+      <a href="{{doc.url}}" alt="A document of {{doc.id}}"> 
+      {{ cl.position }}_{{ cl.cl_date }} Resume 
+      </a>
     {% else %}
       <p>No document uploaded</p>
     {% endif %}
@@ -67,6 +65,4 @@ href="{% static 'css/cl-detail.css' %}"
       <br>
       <button type="submit" class="button-37">Upload Document</button>
     </form>
-  
-    
 {% endblock %}
