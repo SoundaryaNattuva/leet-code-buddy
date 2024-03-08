@@ -18,9 +18,8 @@
   <div class="dashboard-table">
     <table class="content-table">
       <tr class="headers">
-        <th>Position</th>
-        <th>Date Created</th>
         <th>Role</th>
+        <th>Date Created</th>
         <th>Tags</th>
       </tr>
       {% if cls %}
@@ -28,7 +27,6 @@
         <tr class="rows">
           <td><a href="{% url 'cl-detail' cl.id %}">{{ cl.position }}</a></td>
           <td>{{ cl.cl_date }}</td>
-          <td>{{ cl.position }}</td>
           <td>{{ cl.tags }}</td>
         </tr>
         {% endfor %}
