@@ -1,7 +1,4 @@
-
-
 .home_container{
-  /* border: 1px solid red; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,7 +6,6 @@
   max-width: 700px;
   max-height: 600px;
 }
-
 
 .left_cont {
   width: 50%;

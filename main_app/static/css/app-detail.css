@@ -8,12 +8,11 @@
   font-weight: 600;
   text-align: center;
   margin-top: 20px;
-  /* border: 1px solid rgb(225, 55, 83); */
 }
 
 .app-info{
   display: flex;
-  justify-content: center; /* Horizontally center the flex items */
+  justify-content: center;
   align-items: center;
 }
 
@@ -49,11 +48,11 @@
   width: 100px;
 }
 
-
 .content-table tbody td{
   border-bottom: 1px solid gray;
   color: black
 }
+
 .content-table tbody tr:last-of-type {
   border-bottom: 2px solid #009879;
 }
@@ -195,7 +194,6 @@ form button{
 .new-interview label{
     display: inline-block;
 }
-
 
 .interview-table tr td{
   color:rgb(37, 32, 33);

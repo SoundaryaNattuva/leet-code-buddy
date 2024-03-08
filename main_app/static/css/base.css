@@ -1,7 +1,7 @@
 body {
   background-color: #f2f4f8;
   color: rgb(0, 0, 0);
-  margin: 0; /* Remove default margin */
+  margin: 0;
   font-family: raleway;
   margin-left: 50px;
   margin-bottom: 50px;
@@ -86,7 +86,5 @@ padding-top: 100px;
 }
 
 .social{
-  /* align-items: center;
-  text-align: center; */
   padding-left: 5px;
 }
