@@ -5,7 +5,7 @@
 Welcome aboard Quest – your trusty sidekick in the thrilling adventure of job hunting! 🚀 Beyond a mere application tracker, Quest is your key to empowerment in the job search realm. Say goodbye to the stress and chaos of endless applications and deadlines. With Quest by your side, you're equipped to conquer each job opportunity with precision and panache. Dive into the excitement and let Quest guide you through the maze of job applications, ensuring each one is perfectly tailored to unlock your dream role! 🌟 Cheers to a whole new level of job search journey – welcome to Quest! 🎉
 
 
-# [Click me to embark on your quest for hire 🌟](https://leet-code-buddy.fly.dev/)
+# [Click me to start your quest for hire 🌟](https://leet-code-buddy.fly.dev/)
 
 ## Application Index 
 ![Image](https://i.imgur.com/9Gf6LeR.png)
@@ -19,9 +19,9 @@ Welcome aboard Quest – your trusty sidekick in the thrilling adventure of job 
 
 ## Icebox items 🧊
 - [ ] Add a search bar to swift through applications and templates.
-- [ ] Have a stats page which shows applications applied to, interviewing and secured.
-- [ ] Make the web app mobile responsive
-- [ ] Add a delete and update functionality to the scheduled interviews
+- [ ] Have a statistics page which shows number of applications you have submitted, how many you are in the process for interviewing and how many you've successfully scored a job for.
+- [ ] Add a delete and update functionality to the scheduled interviews.
+- [ ] Have a calendar page to display all interviews logged.
 
 ## Entity Relational Diagram
 ![Image](https://i.imgur.com/U5sjlAY.png)
