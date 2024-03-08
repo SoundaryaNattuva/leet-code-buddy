@@ -32,7 +32,7 @@ body {
 }
 
 .navbar li {
-  margin-bottom: 0px;
+  margin-bottom: 5px;
 }
 
 .navbar a {
@@ -54,20 +54,6 @@ body {
 img{
 width: 100px;
 padding-top: 100px;
-}
-
-.bottom-navbar{
-  padding-top: 150px;
-  color: white;
-}
-
-.bottom-navbar li{
-  padding-top: 10px;
-  text-align: center;
-}
-
-.bottom-navbar img{
-  width:15px;
 }
 
 .navbar li img{
