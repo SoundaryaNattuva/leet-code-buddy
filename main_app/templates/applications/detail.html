@@ -63,7 +63,7 @@ href="{% static 'css/app-detail.css' %}"
   <div class="scheduled-interviews">
     <table class="interview-table">
       <thead>
-        <tr><th>Date</th><th>Type</th><th>Notes</th></tr>
+        <tr><th>Date</th><th>Type</th><th class="cell_note">Notes</th></tr>
       </thead>
       <tbody>
         {% for interview in app.interview_set.all %}
