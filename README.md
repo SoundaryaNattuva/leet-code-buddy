@@ -30,7 +30,6 @@ Welcome aboard Quest – your trusty sidekick in the thrilling adventure of job 
 ## Resources used 👩🏽‍💻
 - [Mozilla Developer](https://developer.mozilla.org/en-US/)
 - [W3 Schools](https://www.w3schools.com/css/css_table.asp)
-- [DCode - Table CSS](https://www.youtube.com/watch?v=biI9OFH6Nmg)
 
 ## Attributions 🛟
 - [Canva - Favicon and Logo](https://www.canva.com/)
@@ -38,6 +37,8 @@ Welcome aboard Quest – your trusty sidekick in the thrilling adventure of job 
 - [Font Awesome](https://fontawesome.com/)
 - [Coolors](https://coolors.co/palettes/trending)
 - [Icons8 - Icons](https://icons8.com/icon/set/create/group-ui)
+- [DCode - Table CSS](https://www.youtube.com/watch?v=biI9OFH6Nmg)
+- [Button Styling](https://getcssscan.com/css-buttons-examples)
 
 ## Technologies used ⚙️
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
