@@ -70,11 +70,6 @@ h1{
   color: #291720;
 }
 
-.cl-header h1{
-  align-items: left;
-  border: red solid 1px;
-}
-
 .create-header a{
   text-decoration: none;
   color: black;
