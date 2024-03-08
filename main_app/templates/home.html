@@ -11,7 +11,7 @@
 {% block content %}
 <div class="home_container">
   <div class="left_cont">
-    <img src="{% static 'images/LogoLady.png' %}">
+    <img src="{% static 'images/home_logo.png' %}">
   </div>
   <div class="right_cont">
     {% if not user.is_authenticated %}
@@ -24,6 +24,8 @@
         <button type="submit" class="btn submit">Login</button>
       </form>
     </section>
+    {% else %}
+      <p>Welcome to a whole new level of job search journey – welcome to Quest! 🎉</p>
     {% endif %}
   </div>
 </div>

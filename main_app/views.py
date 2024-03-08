@@ -1,13 +1,12 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from django.contrib.auth.views import LoginView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.views import LoginView
 from .models import Application, CoverLetter, Document
 from .forms import InterviewForm
-from datetime import date
 import uuid
 import boto3
 
@@ -26,7 +25,7 @@ def signup(request):
     if form.is_valid():
       user = form.save()
       login(request, user)
-      return redirect('about.html')
+      return redirect('about')
     else:
       error_message = 'Invalid sign up - try again'
   form = UserCreationForm()
@@ -80,14 +79,14 @@ def add_interview(request, app_id):
 
 @login_required
 def cl_index(request):
-  cls = CoverLetter.objects.all()
+  cls = CoverLetter.objects.filter(user=request.user)
   return render(request, 'coverletters/cl-index.html', { 'cls': cls })
 
 @login_required
 def cl_detail(request, cl_id):
   cl = CoverLetter.objects.get(id=cl_id)
   try: 
-    doc = Document.objects.get(cl_id=cl_id)
+    doc = Document.objects.get(cl_id=cl_id) #Gives you ONE thing
   except:
     doc = None
   return render(request, 'coverletters/cl-detail.html', {
@@ -99,6 +98,10 @@ class ClCreate(LoginRequiredMixin, CreateView):
   model = CoverLetter
   fields = ['cl_date', 'position', 'letter', 'tags']
   success_url = '/coverletters'
+    
+  def form_valid(self, form):
+    form.instance.user = self.request.user
+    return super().form_valid(form)
 
 class ClUpdate(LoginRequiredMixin, UpdateView):
   model = CoverLetter
@@ -118,7 +121,7 @@ def add_doc(request, cl_id):
       s3.upload_fileobj(doc_file, BUCKET, key)
       url = f"{S3_BASE_URL}{BUCKET}/{key}"
       document = Document(url=url, cl_id=cl_id)
-      cl_document = Document.objects.filter(id=cl_id)
+      cl_document = Document.objects.filter(cl_id=cl_id)
       if cl_document.first():
         cl_document.first().delete()
       document.save()

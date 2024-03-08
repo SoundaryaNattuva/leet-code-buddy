@@ -144,6 +144,7 @@ class CoverLetter(models.Model):
   position = models.CharField('Title', max_length=50, null=False, blank=True)
   letter = models.TextField('Cover Letter', max_length=2500, null=False, blank=True)
   tags = models.CharField('Tags', max_length=250)
+  user = models.ForeignKey(User, on_delete=models.CASCADE)
 
   def __str__(self):
     return self.position

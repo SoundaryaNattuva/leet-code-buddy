@@ -5,6 +5,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  min-width: 500px;
+  max-width: 700px;
+  max-height: 600px;
 }
 
 
@@ -24,4 +27,7 @@
   width: 50%;
   height: 600px;
   display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
